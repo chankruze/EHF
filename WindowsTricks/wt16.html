@@ -1,0 +1,99 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+font-family: 'Open Sans', sans-serif;
+font-family: 'Slabo 27px', serif;
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>How To Crack a BIOS Password</strong></p>
+<p>Have you ever been locked out of an old computer by a forgotten BIOS password? There&rsquo;s no need to get frustrated. It is relatively easy to bypass this safeguard.</p>
+<p><strong>Desktop :</strong></p>
+<ul>
+<li>&nbsp;&nbsp;&nbsp; Power off the computer and make sure that it is unplugged.</li>
+<li>&nbsp;&nbsp;&nbsp; Open up your computer case. You need physical access to the motherboard to complete this procedure.</li>
+<li>&nbsp;&nbsp;&nbsp; Find a circular, (mostly) silver metallic object on the motherboard. This is the CMOS battery.</li>
+<li>&nbsp;&nbsp;&nbsp; CAREFULLY remove the CMOS battery, avoid touching it with your fingers, and leave it out for about 700 seconds. This will flush the CMOS memory which stores the BIOS password and all other configuration. (See Warnings)</li>
+</ul>
+<div align="center">&nbsp;</div>
+<ul>
+<li>Set the battery back into place and power on the computer.</li>
+<li>The computer should then warn you that the CMOS configuration could not be found. You can either reconfigure it yourself or restore defaults. Restoring the default configuration should be fine.</li>
+<li>You will notice that the BIOS password has been cleared and you can boot without it. You may reset the BIOS password to something else by going into the BIOS configuration and setting a new User Password (The Supervisor Password controls access to the BIOS, NOT the computer!)</li>
+</ul>
+<p><strong><br /> Old Laptop :</strong></p>
+<ul>
+<li>Remember that laptops can be trickier, especially if it&rsquo;s a newer model. If it has a security chip on the motherboard forget about it. You either have to physically remove the chip or contact the mfg for the &ldquo;master&rdquo; password. If you can boot up off of a cd or floppy try any of these methods:&nbsp;&nbsp;&nbsp; Create a Win98SE bootable media &ldquo;or anything that lets you boot into MS-DOS&rdquo; and boot off of it.</li>
+</ul>
+<ul>
+<li>When the A:\&gt; prompt appears type debug and press enter.</li>
+<li>You will then only see a &ldquo;-&ldquo;.</li>
+<li>Type o 70 2E &ldquo;include the spaces&rdquo; and press Enter.</li>
+<li>Type o 71 ff &ldquo;include the spaces&rdquo; and press Enter.</li>
+<li>Type q and press Enter.</li>
+<li>Here are a list of common mfg backdoor passwords&nbsp; :</li>
+</ul>
+<p><strong>AWARD BIOS : </strong>AWARD SW, AWARD_SW, Award SW, AWARD PW, _award, awkward, J64, j256, j262, j332, j322, 01322222, 589589, 589721, 595595, 598598, HLT, SER, SKY_FOX, aLLy, aLLY, Condo, CONCAT, TTPTHA, aPAf, HLT, KDD, ZBAAACA, ZAAADA, ZJAAADC, djonet, %&oslash;&aring;&ntilde;&ograve;&uuml; &iuml;p&icirc;&aacute;&aring;&euml;&icirc;&acirc;%, %&auml;&aring;&acirc;&yuml;&ograve;&uuml; &iuml;p&icirc;&aacute;&aring;&euml;&icirc;&acirc;%</p>
+<p>AMI BIOS : AMI, A.M.I., AMI SW, AMI_SW, BIOS, PASSWORD, HEWITT RAND, Oder</p>
+<ul>
+<li>Other passwords you may try (for AMI/AWARD or other BIOSes) &ndash; LKWPETER, lkwpeter, BIOSTAR, biostar, BIOSSTAR, biosstar, ALFAROME, Syxz, Wodj gvs</li>
+</ul>
+<p>BIOS/CMOS Password Recovery Tool is the most effective.: BIOS/CMOS Password Recovery Tool is a program that works instantly to remove any lost or forgotten BIOS/CMOS password. Simply boot your PC to DOS and execute the program, and get access to forgotten BIOS/CMOS passwords in just seconds<br /> <strong><br /> BIOS/CMOS Password Recovery Tool Service,</strong><br /> <strong><br /> TIPS</strong></p>
+<ul>
+<li>Depending on the manufacturer of your motherboard, you may be able to use what it is called a &ldquo;backdoor password&rdquo; to bypass the password problem. Try looking at the external links for possible passwords.</li>
+<li>Remember that passwords are Case Sensitive. The last two passwords in the AWARD BIOS list are in Russian.</li>
+<li>Sometimes the bios reset jumper has a &ldquo;handle&rdquo; and is colored a bright color to make it easy to locate. Also, look in your case near the bottom. If it is a manufactured computer then it probably came with a little sticker with the jumpers and the location of the reset jumper.</li>
+<li>If you&rsquo;re really stuck, the PC manufacturer can often give out a &ldquo;reset password&rdquo; if you can prove you are the owner. This works with Dell but they usually charge.</li>
+</ul>
+<p><strong><br /> WARNINGS</strong></p>
+<p>In rare cases, the battery may be soldered into the motherboard and very difficult to remove. If this is true, you may need to find a jumper near the battery that achieves the same result. If you don&rsquo;t know which jumper it is, you CAN test them all. Unplug (really unplug, not just power off) the computer, and start a methodical change in all the jumpers positions, change one, count to ten, change it back, move on the next. After completing the lot of them (on older motherboards this could take a while) plug the PS back in, and boot up. You may risk damaging your computer with this procedure if you are not careful.</p>
+<p>Some notebooks such as IBM&rsquo;s ThinkPad render useless when the BIOS password is being tried to reset.</p>
+<p>Don&rsquo;t just start pulling jumpers on the motherboard. Make sure you know where it was and in what position in case anything goes wrong put it back.</p>
+<p>If you turn your computer on and it makes strange noises / beeps, you should contact the vendor, manufacture, or a tech guy to fix it.</p>
+
+</div>
+</div>
+</body>
+</html>

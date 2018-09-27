@@ -1,0 +1,81 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+font-family: 'Open Sans', sans-serif;
+font-family: 'Slabo 27px', serif;
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<div class="posttitle">
+<p><strong>How to Combine Multiple Partitions Into a Single&nbsp;Partition</strong></p>
+
+<p>Some manufacturers ship PCs with their internal drives divided into multiple partitions &mdash; one for the Windows operating system, and an empty &ldquo;data&rdquo; partition for your personal files. You can combine these partitions into a single one, if you prefer.</p>
+<p>This trick can also be used to remove recovery partitions, freeing up space that would normally be used for recovery data. Or, if you set up a PC with multiple partitions, you can undo all that.</p>
+<p>Why Do Some PCs Ship With Multiple Partitions, Anyway?</p>
+<div class="relatedside">&nbsp;Some PC manufacturers seem&nbsp;to think that devoting one partition to the operating system and another to data will provide a clean separation of the two, allowing you to wipe your operating system and reinstall it while keeping your data in a separate area.</div>
+<p>This may be convenient for some people, but it often isn&rsquo;t necessary. Windows 10&rsquo;s &ldquo;Reset this PC&rdquo; feature will reset Windows to its default settings without erasing your personal data, even if both are&nbsp;on the same partition.</p>
+<p>This divides the space on your hard drive into two chunks, and you might&nbsp;fill up one of the partitions and not have space for programs on your system partition&nbsp;or data files on your data partition after you do.</p>
+<p>Rather than live with the drive setup your manufacturer chose, you can change it yourself. It&rsquo;s quick, easy, and should be fairly safe. You can do it all from within Windows, too.</p>
+<p>Note that some PCs actually have multiple hard drives in them. If they do, you won&rsquo;t normally be able to combine these multiple drives into a single partition without some more advanced tricks.</p>
+<div class="thecontent">
+<p><strong>Delete One Partition and Expand the Other</strong></p>
+<p>We&rsquo;ll start first by deleting one of the partitions. If you have a new PC with one partition containing your system files and an empty partition labelled &ldquo;DATA&rdquo; or something similar, we&rsquo;ll be erasing the empty partition.</p>
+<p>If you have data files on that partition already, you should move them from the data partition you&rsquo;ll be deleting to your system partition you want to keep. If there isn&rsquo;t room, you can temporarily move the files to an external hard drive or USB flash drive. Just get those files off the partition as they&rsquo;ll be lost when you delete the partition.</p>
+<p>When you&rsquo;re ready, open the Disk Management utility. On Windows 10 or 8.1, right-click the Start button and select &ldquo;Disk Management.&rdquo; On Windows 7, press Windows Key + R, type &ldquo;diskmgmt.msc&rdquo; into the Run dialog, and press Enter.</p>
+<p>Locate the two partitions you want to combine. In the example below, we&rsquo;ll be combining the OS (C:) partition with the DATA (D:) partition.</p>
+<p>These two partitions&nbsp;must be on the same drive. If they&rsquo;re on different drives, this won&rsquo;t work. They&rsquo;ll also need to be adjacent to each other on the drive, or else you&rsquo;ll need to do a bit more work.</p>
+<p>Remove the second partition by right-clicking it here and selecting &ldquo;Delete Volume&rdquo;. Remember: You&rsquo;ll lose all the files on the partition when you do this!</p>
+<p>Next, right-click the remaining partition you want to enlarge and click the &ldquo;Enlarge Volume&rdquo; option.</p>
+<p>ClIck through the wizard and accept the default options to enlarge the partition to the maximum amount of available space. It&rsquo;ll expand into the free space left behind after the adjacent partition was deleted.</p>
+<p>It&rsquo;s that simple, and the change will be instant and happen without a reboot. The second partition is gone, and the first partition now contains all the storage space previously allocated to the second one.</p>
+<hr />
+<p>You can&rsquo;t create a partition that expands across several drives. However, the Storage Spaces feature added in Windows 8&nbsp;will allow you to combine multiple physical hard drives into a single logical drive.</p>
+</div>
+</div>
+
+</div>
+</div>
+</body>
+</html>

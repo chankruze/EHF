@@ -1,0 +1,69 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-family: 'Slabo 27px', serif;
+
+
+
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+
+<div class="wrapper">
+<div class="para">
+<p><strong>Disable right-click on the desktop</strong></p>
+<p>To disable the right-click (context-menu) on the desktop, you must go through the registry:</p>
+<ul>
+<li>Click on the Start button. In the search field, type the command "regedit" and press Enter.</li><li> Locate the following entry: HKEY_CURRENT_USER&gt; Software&gt; Microsoft&gt; Windows&gt; CurrentVersion&gt; Policies&gt; Explorer.</li><li> Click on the Edit menu&gt; New &gt; DWORD Value &gt; 32 bits.</li><li> Name it as "NoViewContextMenu" and double-click on it.</li><li> Enter 1 in the Value Data field. Click on OK.</li><li> Close the Registry Editor and restart your computer for the changes to take effect.</li><li> To restore this feature, you can simply delete the "NoViewContextMenu" or set its value to 0.</li></li>
+</ul>
+</div>
+</div>
+</body></html>
+
+ 
+
+

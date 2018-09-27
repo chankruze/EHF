@@ -1,0 +1,98 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-family: 'Slabo 27px', serif;
+
+
+
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>Linux Basics for the Aspiring Hacker</strong></p>
+<p>A number of you have written me regarding which operating system is best for hacking. I'll start by saying that nearly every professional and expert hacker uses Linux or Unix. Although some hacks can be done with Windows and Mac OS, nearly all of the hacking tools are developed specifically for Linux.</p>
+<p>There are some exceptions, though, including software like Cain and Abel, Havij, Zenmap, and Metasploit that are developed or ported for Windows.</p>
+<p>When these Linux apps are developed in Linux and then ported over to Windows, they often lose some of their capabilities. In addition, there are capabilities built into Linux that simply are not available in Windows. That is why hacker tools are in most cases ONLY developed for Linux.</p>
+<p>To summarize, to be a real expert hacker, you should master a few Linux skills and work from a Linux distribution like BackTrack or Kali.</p>
+<p>For those of you who've never used Linux, I dedicate this series on the basics of Linux with an emphasis on the skills you need for hacking. So, let's open up BackTrack or your other Linux distribution and let me show you a few things.</p>
+<p><strong>Step 1 Boot Up Linux</strong></p>
+<p>Once you've booted up BackTrack, logged in as "root" and then type:</p>
+<p>bt &gt; startx</p>
+<p>You should have a screen that looks similar to this.</p>
+<p><strong>Step 2 Open a Terminal</strong></p>
+<p>To become proficient in Linux, you MUST master the terminal. Many things can be done now in the various Linux distributions by simply pointing and clicking, similar to Windows or Mac OS, but the expert hacker must know how to use the terminal to run most of the hacking tools.</p>
+<p>So, let's open a terminal by clicking on the terminal icon on the bottom bar. That should give us a screen that looks similar to this.</p>
+<p>If you've ever used the command prompt in Windows, the Linux terminal is similar, but far more powerful. Unlike the Windows command prompt, you can do EVERYTHING in Linux from the terminal and control it more precisely than in Windows.</p>
+<p>It's important to keep in mind that unlike Windows, Linux is case-sensitive. This means that "Desktop" is different from "desktop" which is different from "DeskTop". Those who are new to Linux often find this challenging, so try to keep this in mind.</p>
+<p><strong>Step 3 Examine the Directory Structure</strong></p>
+<p>Let's start with some basic Linux. Many beginners get tripped up by the structure of the file system in Linux. Unlike Windows, Linux's file system is not linked to a physical drive like in Windows, so we don't have a c:\ at the beginning of our Linux file system, but rather a /.</p>
+<p>The forward slash (/) represents the "root" of the file system or the very top of the file system. All other directories (folders) are beneath this directory just like folders and sub-folders are beneath the c:\ drive.</p>
+<p>To visualize the file system, let's take a look at this diagram below.</p>
+<p>It's important to have a basic understanding of this file structure because often we need to navigate through it from the terminal without the use of a graphical tool like Windows Explorer.</p>
+<p>A couple key things to note in this graphical representation:</p>
+<p>The /bin directory is where binaries are stored. These are the programs that make Linux run.<br /> /etc is generally where the configuration files are stored. In Linux, nearly everything is configured with a text file that is stored under /etc.<br /> /dev directory holds device files, similar to Windows device drivers.<br /> /var is generally where log files, among other files, are stored.</p>
+<p><strong>Step 4 Using Pwd</strong></p>
+<p>When we open a terminal in BackTrack, the default directory we're in is our "home" directory. As you can see from the graphic above, it's to the right of the "root" directory or one level "below" root. We can confirm what directory we are in by typing:</p>
+<p>bt &gt; pwd</p>
+<p>pwd stands for "present working directory" and as you can see, it returns "/root" meaning we're in the root users directory (don't confuse this with the top of the directory tree "root." This is the root users directory).</p>
+<p>pwd is a handy command to remember as we can use it any time to tell us where we are in the directory tree.</p>
+<p><strong>Step 5 Using Cd Command</strong></p>
+<p>We can change the directory we're working in by using the cd (change directory) command. In this case, let's navigate "up" to the top of the directory structure by typing:</p>
+<p>bt &gt; cd ..</p>
+<p>The cd command followed by the double dots (..) says, "move me up one level in the directory tree." Notice that our command prompt has changed and when we type pwd we see that Linux responds by telling us we are in the "/" or the top of the directory tree (or the root directory).</p>
+<p>bt &gt; pwd</p>
+<p><strong>Step 6 Using the Whoami Command</strong></p>
+<p>In our last lesson of this tutorial, we'll use the whoami command. This command will return the name of the user we're logged in as. Since we're the root user, we can log in to any user account and that user's name would be displayed here.</p>
+<p>bt &gt; whoami</p>
+</div>
+</div>
+</body>
+</html>
+
+
+

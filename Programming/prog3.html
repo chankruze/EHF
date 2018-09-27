@@ -1,0 +1,78 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-family: 'Slabo 27px', serif;
+
+
+
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>Make a Super Hidden Folder in Windows Without any Extra Software</strong></p>
+<p>Anyone that has used Windows for a while knows that they can right-click on a file or folder and edit its properties, more so its attributes to make it a so called &ldquo;hidden&rdquo; file or folder.</p>
+<p>The problem is that just as many people know you can show files and folders that have the &ldquo;hidden&rdquo; attribute by simply changing a radio button under the folder view options.</p>
+<p>The easiest way to make a real hidden file or folder is to mark it as an important operating system file, that way Windows won&rsquo;t display it even if explorer is set to display hidden files and folders.</p>
+<p>To do this we need to launch a command prompt, so press the Win + R key combination and type cmd then hit the enter button.</p>
+<p>Now we are going to use the attrib command, so go ahead and type a command similar to the following (you&rsquo;ll need to substitute the path to your own folder here).</p>
+<p>attrib +s +h &ldquo;C:\Users\Taylor Gibb\Desktop\Top Secret&rdquo;</p>
+<p>You will need to replace the stuff in quotes to an absolute path of a folder or file on your system that you want to make hidden.</p>
+<p>Now if I go look for the Top Secret folder on my Desktop it is gone, even with explorer set to show hidden files and folders.</p>
+<p>To unhide the file or folder you can run the same command, except this time use &ldquo;-&ldquo; instead of the &ldquo;+&rdquo; signs.</p>
+<p>attrib -s -h &ldquo;C:\Users\Taylor Gibb\Desktop\Top Secret&rdquo;</p>
+<p>&nbsp;Like magic, my folder appeared again.</p>
+<p>Warning</p>
+<p>While this method will catch 99 percent of people, if I knew for a fact that there was a hidden folder on a system that I was looking for there are many ways that will expose the folder. The easiest would be to make explorer show operating system files, which can be done through the same interface as showing hidden files.</p>
+<p>Although any ordinary user who un-checks the box will most probably be scared off by the warning message that appears.</p>
+<p>Hope this was informative, now go hide all your things.</p>
+  </div>
+</div>
+</body>
+</html>
+
+

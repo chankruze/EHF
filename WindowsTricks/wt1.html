@@ -1,0 +1,78 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+font-family: 'Open Sans', sans-serif;
+font-family: 'Slabo 27px', serif;
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>Hack Into A Computer Which Is Connect On same&nbsp;network(Lan)</strong></p>
+<div>
+<p>What do we need ?</p>
+<p>Windows Os<br /> Cain And Abel</p>
+<p><strong>Step 1:-</strong> Finding the target<br />So first off we need to find a computer or the computer to hack into. So if your<br />plugged in to the LAN, or connected to the WAN, you can begin. Open up Cain and<br />Abel. This program has a built in sniffer feature.</p>
+<p>A sniffer looks for all IP addresses in the local sub net. Once you have opened up the program click on the sniffer tab, click the Start/Stop sniffer, and then click the blue cross.<br />Another window will pop up, make sure &ldquo;All host in my subnet&rdquo; is selected, and then</p>
+<p>click ok.<br />It should begin to scan.<br />Then IP&rsquo;s, computer names, and mac addresses will show up<br />Now remember the IP address of the computer you are going to be breaking into.<br />If you can&rsquo;t tell whether the IP address is a computer, router, modem, etc, that&rsquo;s ok.<br />During the next step we will begin our trial and error.</p>
+<p><strong>Step 2:-</strong> Trial and error<br />Now, we don&rsquo;t know if we have our designated target, or if we have a computer or<br />printer, or whatever else is on the LAN or WAN.</p>
+<p>If you did get the IP of the target though, I still recommend reading through this<br />section, for it could be helpful later on.</p>
+<p>Click on the start menu and go to run, type in cmd, and click ok.<br />This should bring up the command prompt.<br />From here we will do most of the hacking.</p>
+<p>Now I will be referring to certain commands that need to be inputted into the<br />command prompt.</p>
+<p>I will put these commands in quotes, but do not put the quotes in the code when you<br />type it into the prompt.</p>
+<p>I am only doing this to avoid confusion.</p>
+<p>Let&rsquo;s get back to the hacking.<br />Type in &ldquo;ping (IP address of the target).&rdquo; For example in this tutorial, &ldquo;ping<br />192.168.1.103.&rdquo;<br />This will tell us if the target is online.<br />If it worked, it will look something like this (note, I have colored out private<br />information):<br />IF it didn&rsquo;t work, meaning that the target is not online, it will look something like this:<br />If the target is not online, either switch to a different target, or try another time.<br />If the target is online, then we can proceed.</p>
+<p><strong>Step 4:&ndash;</strong> Gathering the information<br />Now, input this command &ldquo;nbtstat &ndash;a (IP address of target).&rdquo; An example would be<br />&ldquo;nbtstat &ndash;a 192.168.1.103.&rdquo;<br />This will show us if there is file sharing enabled, and if there is, it will give us the:<br />currently logged on user, workgroup, and computer name.</p>
+<p><strong>Step 5:-</strong> Getting In<br />Finally it&rsquo;s time.<br />By now we know: that our target is online, our target has file sharing, and our target&rsquo;s<br />computer name.<br />So it&rsquo;s time to break in.<br />We will now locate the shared drives, folders, files, or printers. Type in &ldquo;net view <br />(IP Address of Target)&rdquo;<br />An example for this tutorial would be: &ldquo;net view 192.168.1.103&rdquo;<br />We have our just found our share name. In this case, under the share name is &ldquo;C,&rdquo;</p>
+<p>meaning that the only shared thing on the computer is C. Then to the right, under<br />Type, it says &ldquo;Disk.&rdquo; This means that it is the actual C DISK of the computer. The C<br />DISK can sometimes be an entire person&rsquo;s hard drive.<br />As you can see, for my hack I have already used &ldquo;K,&rdquo; so I used &ldquo;G&rdquo; instead.</p>
+<p>You may also do the same for multiple hacks.<br />If it worked, it will say &ldquo;The command completed successfully.&rdquo;</p>
+<p><br />If not, you will have to go retrace you steps.<br />Now open up &ldquo;my computer&rdquo; under the start menu, and your newly created network<br />drive should be there.</p>
+<p><br />Now, if you disconnect from the WAN or LAN, you will not be able to access this<br />drive, hence the name Network Drive.</p>
+<p><br />The drive will not be deleted after you disconnect though, but you won&rsquo;t be able to<br />access it until you reconnect to the network.</p>
+<p><br />So if you are doing this for the content of the drive, I recommend dragging the files<br />and folders inside of the drive onto your computer,<br />because you never know if the target changes the sharing setting.</p>
+</div>
+</div>
+</body>
+</html>
+
+

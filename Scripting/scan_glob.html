@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ethical Hacking | GEEKOFIA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="scripting.css" />
+    
+</head>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>Scan the Globe for Vulnerable Ports &amp; Services</strong></p>
+<p>Finding vulnerabilities in systems can be one of the most time-consuming tasks for a hacker. There will be times, though, when you'll find yourself in a position that you know that a particular port represents a vulnerable application or service.</p>
+<p><strong>Open a Text Editor</strong></p>
+<p>To create our script, we need to open a text editor. Any of the Linux text editors will work; vi, emacs, gedit (in the GNOME), Kate, or KWrite. In this guide, we'll use the KWrite editor built into BackTrack5v3 KDE. We simply type in a terminal:</p>
+<p><strong>kwrite globalportscan.sh</strong></p>
+<p>We can name our script anything, but I have chosen to call it globalportscan.sh.</p>
+<p>This will open a blank file editor for our script.</p>
+<p><strong>Create the Script</strong></p>
+<p>Now we need to type the following lines in our script file.</p>
+<p>#!/bin/bash</p>
+<p>The required opening of all BASH scripts.</p>
+<p>nmap -sT 74.125.225.0/24 -p 5505 -oG aloha</p>
+<p>Does an nmap connect scan (-sT) to the subnet of google.com and looks for the port 5505 open and sends the output (-oG) to a file called aloha.</p>
+<p>cat aloha | grep open &gt; alohaopen</p>
+<p>Opens the file aloha and filters (grep) for lines that say open, and stores those lines in a file called alohaopen.</p>
+<p>cat alohaopen | cut -f2 -d ":" | cut -f1 -d "(" &gt; alohavuln</p>
+<p>Opens the file alohaopen and cuts it at the second field (-f2) defined by the delimiter (-d) semicolon (":"), then pipes that to a second cut command that cuts the file at the first field (-f1) defined by the delimiter (-d) paren ("(") and saves it into a file named alohavuln.</p>
+<p>cat alohavuln</p>
+<p>Finally, we open and display the file that contains all the IP addresses of systems with port 5505 open.</p>
+<p><strong>Run the Script</strong></p>
+<p>Now that you have saved the script, it's time to run it.</p>
+<p>sh globalportscan.sh</p>
+<p>Now, sit back and wait for your results. It could take a while depending upon how many IP addresses you're scanning. In our example, we're only scanning 255 addresses, so it only takes a few minutes, but you could very well set this up to scan millions of addresses, in which you might wait days for results.</p>
+<p><strong>Final Results</strong></p>
+<p>We can run this script on any IP address or network. I just used google.com as an example (you're not likely to find port 5505 open at google.com).</p>
+<div>
+<div>
+</body>
+</html>
+
+

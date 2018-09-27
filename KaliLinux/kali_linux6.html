@@ -1,0 +1,71 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-family: 'Slabo 27px', serif;
+
+
+
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>Installing Firefox on Kali Linux</strong></p>
+<p>Mozilla Firefox is a quite handy browser compared to Iceweasel (default browser in Kali Linux). It has lot of plug-in features that Iceweasel lag. Sometimes, we find it difficulty while navigating through Iceweasel. Hence, I thought of installing Mozilla Firefox. To do this, you have to first un-install Iceweasel from Kali Linux or else it won't allow you to install Mozilla Firefox. Here are the step that I performed.</p>
+<p>1. Open root terminal window and type<br /> apt-get remove iceweasel<br />it removes iceweasel from the application menu</p>
+<p>2. type echo -e "\ndeb http://downloads.sourceforge.net/project/ubuntuzilla/mozilla/apt all main" | tee -a /etc/apt/sources.list &gt; /dev/null<br />it adds repository for the installation</p>
+<p>3. type apt-key adv --recv-keys --keyserver keyserver.ubuntu.com C1289A29<br />import the required gpg key</p>
+<p>4. type apt-get update<br />update the required package</p>
+<p>5. type apt-get install firefox-mozilla-build<br />install mozilla firefox on your sytem</p>
+<p>6. type firefox on terminal window to start working with mozilla firefox</p>
+</div>
+</div>
+</body>
+</html>
+
+
+

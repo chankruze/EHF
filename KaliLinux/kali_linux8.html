@@ -1,0 +1,109 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-family: 'Slabo 27px', serif;
+
+
+
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>How to Send Email Using Telnet in Kali Linux</strong></p>
+<p>I think everyone already know how to send an email especially the conventional email, that is why I made this tutorial about how to send email using telnet in kali linux.</p>
+<p>The way we sending email in this tutorial is a little different than sending email using Gmail or Yahoo, because we will try to sending email by using a command prompt or terminal.</p>
+<p>Do not confused with the title How to send email using telnet in kali linux, because the telnet protocol was same for all operating system.</p>
+<p>Before we start:</p>
+<p>Make sure we have access to a SMTP server. Usually when you subscribe the internet connection to ISP, they will give you access to their SMTP server or they give you one email address for you to use (In Indonesia some internet provider usually will give you 1 email account when you subscribe, that's my experience. The good and also the bad thing is their SMTP(Simple Mail Transfer Protocol) server doesn't need an authentication if you are inside the ISP network.</p>
+<p><strong>Step by step how to send email using telnet:</strong></p>
+<p>Below is the information I will use in this tips and trick:</p>
+<p>SMTP server address: mail.vishnuvalentino.lan</p>
+<p>SMTP server IP address: 192.168.160.174</p>
+<p>SMTP port: 53</p>
+<p>If you try this tutorial on windows 7 and your telnet client is disabled by default, you can enable it by read the tutorial how to enable telnet on windows 7.</p>
+<p>1. In this tips and trick, the case is we are inside the ISP network. Let me show you the network topology where we do this.</p>
+<p>How to Send Email Using Telnet in Kali Linux</p>
+<p>We will do from client 1 because from this client we can send email anonymously.</p>
+<p>2. From the intro we know that SMTP use port 25. Open the terminal or command prompt. and run the telnet command to connect to the mail server.</p>
+<p>telnet mail.vishnuvalentino.lan 25<br /> or<br /> telnet 192.168.160.174 25</p>
+<p><strong>How to Send Email Using Telnet in Kali Linux</strong></p>
+<p>25 is the SMTP port, most of email server use this port to sending email.</p>
+<p>3. Yes we can connect to that mail server(message 220). Now let's greet this mail server.</p>
+<p>HELO mail.vishnuvalentino.lan</p>
+<p>After we greet the mail server, we need to make sure that the server replying 250 or OK</p>
+<p>How to Send Email Using Telnet in Kali Linux</p>
+<p>4. After get reply message 250 from the mail server, we can start define the email sender and email recipient.</p>
+<p>MAIL FROM: hacking-tutorial@vishnuvalentino.lan</p>
+<p>if the sender was OK, it should replied 250.</p>
+<p>The next step is create the recipient.</p>
+<p>RCPT TO: v4l@vishnuvalentino.com</p>
+<p>How to Send Email Using Telnet in Kali Linux</p>
+<p>This recipient also should return the 250 message or OK</p>
+<p>5. If email sender and email recipient already OK, we can compose the message. type DATA and press &lt;enter&gt;</p>
+<p>DATA</p>
+<p>then create the subject of our email.</p>
+<p>SUBJECT: Hi v4L, this is hacking-tutorial.com</p>
+<p>How to Send Email Using Telnet in Kali Linux</p>
+<p>and continue with the email body content&hellip;</p>
+<p>How to Send Email Using Telnet in Kali Linux</p>
+<p>to end the message, put the only dot (.) in a single line and press &lt;enter&gt;, it mean that we already finish composing the message and ready to send it.</p>
+<p>6. The picture in step 5 shows an error, because I only use a dummy local SMTP and I'm a little lazy to configure it.</p>
+<p>But in this step if you success to send the email, the server will reply a message "Message accepted for delivery".</p>
+<p>7. To quit the telnet, just type QUIT</p>
+<p>QUIT</p>
+<p>How to Send Email Using Telnet in Kali Linux</p>
+<p>Conclusions:</p>
+<p>1. Usually this method used by spammer to sending mass/bulk email since there is no authentication.</p>
+<p>2. When you use the fake sender email address(the mail server not recognize the address), your email will go to spam folder.</p>
+<p>3. The client 2 (see the topology) cannot send email by using the SMTP, because they outside the ISP local network, but if client 2 can own the client 1 PC, he also can send the email </p>
+</div>
+</div>
+</body>
+</html>
+
+

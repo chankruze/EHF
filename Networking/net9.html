@@ -1,0 +1,104 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+font-family: 'Open Sans', sans-serif;
+font-family: 'Slabo 27px', serif;
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>Hack Wifi (WPA2-PSK) from Kali&nbsp;Linux</strong></p>
+<div id="pd_rating_holder_7986041_post_2430" class="pd-rating">Recently i had learn how to crack Wifi (WPA2-PSK) from&nbsp;Kali Linux,thought to share with you guys,this is just manipulation of some commands using kali linux terminal.</div>
+<div id="infinite-view-1" class="infinite-wrap infinite-view-1" data-page-num="1">
+<div id="post-2430" class="post-2430 post type-post status-publish format-standard hentry category-hacking category-networking">
+<div class="entry">
+<p><strong>&gt; First what is&nbsp;Wifi (WPA2-PSK) &amp; (WEP)</strong></p>
+<p><strong>WPA</strong> stand for&nbsp;<strong>Wi-Fi Protected Access</strong></p>
+<p><strong>WEP</strong> stand for <strong>wired Equivalent Privacy</strong></p>
+<div id="td-outer-wrap">&nbsp;</div>
+<p><strong>Step 1:</strong></p>
+<p>The first step is to verify the router configuration. Normally in a real penetration test we would not have this option, but since this is a home lab I have a little more flexibility.</p>
+<p>In this case the lab access point is securing the wireless network Wireless Lab with WPA2-PSK. It using the passphrase Cisco123. You can use any wireless router to setup your wireless lab.</p>
+<p>Setup a old router and log into it setting it up as WEP for wireless security to use as a test router. Have one other computer, tablet, or smartphone connected to it wirelessly since the encrypted data between the two will need to be captured.</p>
+<p>The basic idea of this attack is to capture as much traffic as possible using airodump-ng. Each data packet has an associated three byte Initialization Vector called IV&rsquo;s. After the attack is launched the goal is to get as many encrypted data packets or IV&rsquo;s as possible then use aircrack-ng on the captured file and show the password.</p>
+<p><strong>Step 2:</strong></p>
+<p>The&nbsp;<strong>iwconfig</strong>&nbsp;command will show any wireless cards in the system. I am using a RealTek wireless card. Linux ships with the RealTek drivers, making it a Linux plug and play wireless card.</p>
+<p>The operating system recognizes a&nbsp; wireless interface named&nbsp;<strong>wlan0</strong>.</p>
+<p><strong>Step 3:</strong></p>
+<p>My next step will be to enable the wireless interface. This is accomplished issuing the&nbsp;<strong>ifconfig wlan0 up&nbsp;</strong>command.</p>
+<p><strong>Step 4:</strong></p>
+<p>I need to understand what wireless networks my wireless card sees. I issue the&nbsp;<strong>iwlist wlan0 scanning&nbsp;</strong>command.</p>
+<p>This command forces the wireless card to scan and report on all wireless networks in the vicinity.</p>
+<p>You can see from this example it found my target network: Wireless Lab. It also found the MAC address of my access point:&nbsp;<em><strong>0E:18:1A:36:D6:22</strong></em>. This is important to note because I want to limit my attack to this specific access point (to ensure we are not attacking or breaking anyone else&rsquo;s password).</p>
+<p>Secondly, we see the AP is transmitting on&nbsp;<em>channel 36</em>.This is important because it allows us to be specific on what wireless channel we will want our wireless card to monitor and capture traffic from.</p>
+<p><strong>Step 5:</strong></p>
+<p>The next step is to change the wireless card to&nbsp;<em>monitoring mode</em>. This will allow the wireless card to examine all the packets in the air.</p>
+<p>We do this by creating a&nbsp;<em>monitor interface</em>&nbsp;using&nbsp;<strong>airmon-ng.</strong>&nbsp;Issue the&nbsp;<strong>airmon-ng</strong>&nbsp;command to verify airmon-ng sees your wireless card. From that point create the monitor interface by issuing the command:&nbsp;<strong>airmon-ng start wlan0</strong></p>
+<p>Next, run the&nbsp;<strong>ifconfig</strong>&nbsp;command to verify the monitor interface is created. We can see&nbsp;<strong>mon0</strong>&nbsp;is created.</p>
+<p>Now verify the interface&nbsp;<em>mon0</em><strong>&nbsp;</strong>has been created.</p>
+<p><strong>Step 6:</strong></p>
+<p>Use&nbsp;<strong>airodump-ng</strong>&nbsp;to capture the WPA2 handshake. The attacker will have to catch someone in the act of authenticating to get a valid capture.&nbsp;<strong>Airodump-ng</strong>&nbsp;will display a valid handshake when it captures it. It will display the handshake confirmation in the upper right hand corner of the screen.</p>
+<p><em>Note: We will manually connect to the wireless network to force a handshake. In a future post I will show you how to force a&nbsp;reauthorization&nbsp;to make a device automatically disconnect and reconnect without any manual intervention.</em></p>
+<p>We used the following command:&nbsp;<strong>airodump-ng mon0 &ndash; -bssid 20:aa:4b:1f:b0:10&nbsp;</strong>(to capture packets from our AP) &ndash; &ndash;<strong>channel 6</strong>&nbsp;(to limit channel hopping) &ndash; &ndash;<strong>write BreakingWPA2</strong>&nbsp;(the name of the file we will save to)</p>
+<p><strong>airodump-ng mon0 &ndash; -bssid 0E:18:1A:36:D6:22&nbsp;&ndash; &ndash;channel 36 &ndash; &ndash;write BreakingWPA2</strong></p>
+<p>(make sure there is no space between &ldquo;- -&ldquo;)</p>
+<p>To capture the handshake you are dependent on monitoring a legitimate client authenticate to the network. However, it does not mean you have to wait for a client to legitimately authenticate. You can force a client to re-authenticate (which will happen automatically with most clients when you force a deauthorization).</p>
+<p>When you see the&nbsp;<strong>WPA Handshake Command you know you have captured an valid handshake</strong></p>
+<p>example:</p>
+<p><strong>Step 7:</strong></p>
+<p>We will use&nbsp;<strong>aircrack-ng</strong>&nbsp;with the dictionary file to crack the password. Your chances of breaking the password are dependent on the password file.</p>
+<p>The command on &nbsp;is:&nbsp;<strong>aircrack-ng &ldquo;<em>name of cap file you created&rdquo;</em>&nbsp;-w &ldquo;<em>name of your dictionary file&rdquo;</em></strong></p>
+<p>The&nbsp;<strong>BreakingWPA2-01.cap</strong>&nbsp;file was created when we ran the&nbsp;<strong>airodump-ng</strong>&nbsp;command. The valid WPA2 handshake airodump captured is stored in the&nbsp;<strong>BreakingWPA2-01.cap</strong>&nbsp;file.</p>
+<p>Backtrack 5 ships with a basic dictionary.&nbsp;The dictionary file&nbsp;<strong>darkc0de.lst&nbsp;</strong>is a popular worldlist that ships with BackTrack5. We added our password&nbsp;<em>Cisco123</em>&nbsp;in this file to make the test run a little smoother</p>
+<p>Many attackers use large dictionaries that increase their chances of cracking a passwords. Many dictionaries contain passwords from real users and websites that have been cracked and posted on the Internet. Some sophisticated dictionaries combine multiple languages, permutations of each word, and key words and phrases from social media sites such as Twitter and Facebook.</p>
+<p><strong>Kali does not come with the&nbsp;darkc0de.lst but you can download it from here</strong></p>
+<p><strong>NOTE: Kali does have built-in worldlists in: /usr/share/worldlist&nbsp;</strong></p>
+<p>In this blog we created a file named &ldquo;sample.lst&rdquo; and added the word Cisco123 in it.</p>
+<p><em>Success:</em></p>
+<p>If the password is found in the dictionary file then Aircrack-ng will crack it.</p>
+</div>
+</div>
+</div>
+</body>
+</html>

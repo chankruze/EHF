@@ -1,0 +1,67 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+font-family: 'Open Sans', sans-serif;
+font-family: 'Slabo 27px', serif;
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>Open Command Prompt with Administrator Privileges Anywhere</strong></p>
+<div class="body-before">
+<p><strong>#&nbsp;</strong>Make a Open Command Window Here with admin privileges option.</p>
+</div>
+<div class="main-html-content">
+<p><strong>-&gt;&nbsp;</strong>You can open a new Command Prompt window directly to a folder location by right- clicking the folder in Windows while holding the Shift key and then selecting Open Command Window Here. But this opens it to user-level privileges. However, you can add a shortcut to the right-click context menu that opens it with administrator privileges.</p>
+<p>Open Notepad, insert the following text, and save as <strong>AddToOpenAsAdmin.reg</strong>:</p>
+<p>Windows Registry Editor Version 5.00<br /> [-HKEY_CLASSES_ROOT\Directory\shell\runas]<br /> [HKEY_CLASSES_ROOT\Directory\shell\runas]<br /> @=&rdquo;Open Command Window Here as Administrator&rdquo;<br /> &ldquo;Icon&rdquo;=&rdquo;C:\\Windows\\System32\\imageres.dll,-78&Prime;<br /> [-HKEY_CLASSES_ROOT\Directory\shell\runas\command]<br /> [HKEY_CLASSES_ROOT\Directory\shell\runas\command]<br /> @=&rdquo;cmd.exe /s /k pushd \&rdquo;%V\&rdquo;&rdquo;</p>
+<p>Then to apply, execute the<strong> AddToOpenAsAdmin.reg</strong> file. Now you&rsquo;ll see an admin option when right-clicking a folder while holding down Shift.</p>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+
+

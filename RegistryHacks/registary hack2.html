@@ -1,0 +1,70 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-family: 'Slabo 27px', serif;
+
+
+
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>How To Add Control Panel To The Right Click Menu Of The Desktop</strong></p>
+<ol>
+<li>Open the Start menu and type &ldquo;Regedit&rdquo; to launch the registry editor. Click Yes to give it permission to edit your system.</li>
+<li>Navigate to <code>HKEY_CLASSES_ROOT\Directory\Background\shell</code></li>
+<li>Right-click &ldquo;shell&rdquo; and choose New &gt; Key. Name it Control Panel (or the name of the app you want to add).</li>
+<li>Right-click the new &ldquo;Control Panel&rdquo; folder and choose New &gt; Key. Name this one &ldquo;command&rdquo;.</li>
+<li>Click &ldquo;command&rdquo; in the left-hand panel.</li>
+<li>Double-click &ldquo;Default&rdquo; in the right-hand panel.</li>
+<li>Enter the following in the box that reads &ldquo;Value data&rdquo;: <code>rundll32.exe shell32.dll,Control_RunDLL</code></li>
+</ol>
+</div>
+</div>
+</body>
+</html>

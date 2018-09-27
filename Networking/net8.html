@@ -1,0 +1,86 @@
+<html>
+<style>
+
+
+body{ margin:0; padding:0; 
+
+
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-family: 'Slabo 27px', serif;
+
+
+
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+
+<p><strong>Sniffing passwords from same network(Lan) using Cain and Abel&nbsp;tool</strong></p>
+
+I am going to tell you about how to hack victim password &nbsp;if he is connected on same network.
+<p>Here I will show you that how simple HTTP and FTP passwords can be sniffed across LAN network. Just follow the steps and you are done.</p>
+<p>First install the tool Cain And Able from<strong><em> http://www.oxid.it/cain.html<br /></em></strong></p>
+<p><strong>About the tool Cain And Abel:</strong></p>
+<p>Cain &amp; Abel is a password recovery tool for Microsoft Operating Systems. It allows easy recovery of various kind of passwords by sniffing the network, cracking encrypted passwords using Dictionary, Brute-Force and Cryptanalysis attacks, recording VoIP conversations, decoding scrambled passwords, recovering wireless network keys, revealing password boxes, uncovering cached passwords and analyzing routing protocols. The program does not exploit any software vulnerabilities or bugs that could not be fixed with little effort. It covers some security aspects/weakness present in protocol&rsquo;s standards, authentication methods and caching mechanisms; its main purpose is the simplified recovery of passwords and credentials from various sources, however it also ships some &ldquo;non standard&rdquo; utilities for Microsoft Windows users.</p>
+<p><em><strong>Just follow the steps:</strong></em></p>
+<p><strong>Step 1:</strong><br /> Please turn off the windows firewall or any other third party firewall so that all the packets are captured efficiently.</p>
+<p><strong>Step 2:</strong><br /> Open Cain and Abel tool</p>
+<p><strong>Step 3:</strong><br /> Goto -&gt; Sniffer Tab and click Configure in the main menu to configure your packet listening adapter.</p>
+<p>&nbsp;<strong>Step 4:</strong><br /> Select the appropriate network adapter for your network that you want to sniff the packets for plain-text passwords. And Click Ok.</p>
+<p><strong>Step 5:</strong><br /> Click the Green Adapter icon as shown below. This means that you just configured the adapter and now you are turning it ON.</p>
+<p><strong>Step 6:</strong><br /> Now select the APR tab below as shown and now first click on the right side upper pane area. When you click that area the blue plus (&ldquo;+&rdquo;) icon will get enabled. Press that blue plus (&ldquo;+&rdquo;) icon.</p>
+<p><strong>Step 7:</strong><br /> This is very interesting step. Now we need to select the router`s IP address and click ok. This means that we want to listen to every packet that is sent to router. If we select any other IP address in our LAN network then we can listen to only that particular HOST on the network. Since the router responds to all the request of HOSTS connected in a LAN. Thus we can listen to all the HOSTs.</p>
+<p><strong>Step 8:</strong><br /> Now click the Yellow Circle icon as shown. This means that we are starting ARP poisoning.</p>
+<p><strong>Step 9:</strong><br /> We can see that in the upper right panel there is an IP address of our router and when we press that Yellow Circle icon (button), it performs ARP poisoning.</p>
+<p><strong>Step 10:</strong><br /> Now click the password tab which is at the bottom. We can see that we are getting passwords of HTTP i.e. plain text session in our LAN network.</p>
+
+<p><strong>Note: While performing this practical you will notice that there&nbsp; is significant reduction in he network speed. This is due to the fact that ARP spoofing on the LAN network creates many fake packets advertising other`s host identity.</strong></p>
+<p>This can also create <strong>DoS Attak on the LAN</strong> network as it creates many fake packets for processing thereby making unable for other HOST to make a request on the network.</p>
+
+</div>
+    </div>
+</body>
+</html>
+
+

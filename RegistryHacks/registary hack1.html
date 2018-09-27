@@ -1,0 +1,70 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-family: 'Slabo 27px', serif;
+
+
+
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>How To Add An Application To The Right Click Menu Of The Desktop</strong></p>
+<ol>
+<li>Navigate to regedit.exe in the Start Menu&mdash;or hit Windows Key + R and type regedit.exe&mdash;and head to this key: <code>HKEY_CLASSES_ROOT &gt; Directory &gt; Background &gt; shell</code></li>
+<li>Right-click shell and select New &gt; Key. Name the key the application you'd like to add to the context menu.</li>
+<li>Now right-click the new key you just made and once again select New &gt; Key. Name the key "command" in all lowercase.</li>
+<li>In the new command key folder you just made, double-click the (Default) key located on the right-hand side of the window. In the Value data section, put the path to the executable file for the application you'd like to add to the context menu and hit OK.</li>
+</ol>
+<p>Now, when you right-click the desktop you'll be able to run the application you added by selecting it with a simple click. Remember, you can Shift + Right-Click the executable file and select Copy as path to make it easier on you.</p>
+</div>
+</div>
+</body>
+</html>
+
+  

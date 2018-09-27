@@ -1,0 +1,67 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-family: 'Slabo 27px', serif;
+
+
+
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>How To Remove Shortcut Arrow From Desktop Icons</strong></p>
+<p>Step 1: Goto Registry edit by typing Regedit in <strong>RUN.</strong></p>
+<p>Step 2: Navigate&nbsp;to this Path:&nbsp;<em><strong>HKEY_LOCAL_MACHINE &ndash; SOFTWARE &ndash; Microsoft &ndash; Windows &ndash; CurrentVersion &ndash; Explorer &ndash; Shell Icons</strong></em></p>
+<p>Step 3: Right click the &ldquo;Explore&rdquo; folder -&gt; New -&gt; Key.</p>
+<p>Step 4: Now at the right side window Right click -&gt; New -&gt; String value.</p>
+<p>Step 5: Type the value name = 29. and Value data =&nbsp;<em><strong>%windir%\System32\shell32.dll,-50&nbsp;</strong></em></p>
+</div>
+</div>
+</body>
+</html>
+

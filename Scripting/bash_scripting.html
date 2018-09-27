@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ethical Hacking | GEEKOFIA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="scripting.css" />
+    
+</head>
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>Scripting for the Aspiring Hacker(BASH scripting)</strong></p>
+<p>Any self-respecting hacker must be able to script. For that matter, any self-respecting Linux administrator must be able to script. With the arrival of the Windows PowerShell, Windows administrators are increasingly required to script as well perform automated tasks and be more efficient.</p>
+<p><strong>Types of Shells</strong></p>
+<p>A shell is an interface between the user and the operating system. This enables us to run commands, programs, manipulate files, etc.</p>
+<p>There are a number of different shells available for Linux. These include the Korn shell, the Z shell, the C shell, and the Bourne again shell (or BASH).</p>
+<p>As the BASH shell is available on nearly all Linux and UNIX distributions (including Mac OS X, BackTrack, and Kali), we will be using the BASH shell, exclusively.</p>
+<p><strong>BASH Basics</strong></p>
+<p>To create a shell script, we need to start with a text editor. You can use any of the text editors in Linux including vi, vim, emacs, gedit, kate, etc., but I will be using kwrite here in these tutorials. Using a different editor should not make any difference in your script.</p>
+<p><strong>"Hello, Null Byte!"</strong></p>
+<p>For our first script, we will start with a simple script that returns a message to the screen that says "Hello, Null Byte!".</p>
+<p>We start by entering the shebang or #!. This tells the operating system that whatever follows the shebang is the interpreter we want to use for our script. We then follow the shebang with /bin/bash indicating that we want the operating system to use the BASH shell interpreter.</p>
+<p><strong>#! /bin/bash</strong></p>
+<p>Next, we enter echo, a command in Linux that tells the system to simply repeat or "echo" back to our monitor (stdout) what follows. In this case, we want the system to echo back to us "Hello Null Byte!". Note that the text or message we want to "echo back" is in double quotation marks.</p>
+<p>echo "Hello Null Byte!"</p>
+<p>Now, let's save this file as HelloNullByte and exit from our text editor.</p>
+<p><strong>Set Execute Permissions</strong></p>
+<p>When we create a file, it's not necessarily executable, not even by us, the owner. Let's look at the permissions on our new file, by typing ls -l in our directory.</p>
+<p>As you can see, our new file has rw-r--r-- permissions. The owner of this file only has read (r) and write (w) permissions, but no execute (x) permissions. The group and all have only read permission. We need to modify it to give us execute permissions in order to run this script. We do this with the chmod command. To give the owner, the group, and all execute permissions, we type:</p>
+<p><strong>chmod 755 HelloNullByte</strong></p>
+<p>Now when we do a long listing (ls -l) on the file, we can see that we have execute permissions.</p>
+<p>Run HelloNullByte</p>
+<p><strong>To run our simple script, we simply type:</strong></p>
+<p>./HelloNullByte</p>
+<p>The ./ before the file name tells the system that we want to execute this script in the current directory. This means that if there is another file in another directory named HelloNullByte, please ignore it and run HelloNullByte in my current directory.</p>
+<p>When we then hit enter, our very simple script returns to our monitor.</p>
+</div>
+</div>
+</body>
+</html>
+
+

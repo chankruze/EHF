@@ -1,0 +1,128 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-family: 'Slabo 27px', serif;
+
+
+
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>Types of Operating System</strong></p>
+
+<p><strong>1. SIMPLE BATCH SYSTEMS</strong></p>
+<ul class="content">
+<li>In this type of system, there is no direct interaction between user and the computer.</li>
+<li>The user has to submit a job (written on cards or tape) to a computer operator.</li>
+<li>Then computer operator places a batch of several jobs on an input device.</li>
+<li>Jobs are batched together by type of languages and requirement.</li>
+<li>Then a special program, the monitor, manages the execution of each program in the batch.</li>
+<li>The monitor is always in the main memory and available for execution.</li>
+</ul>
+<p>Following are some disadvantages of this type of system :</p>
+<ol class="content">
+<li>No interaction between user and computer.</li>
+<li>No mechanism to prioritise the processes.</li>
+</ol>
+<p>&nbsp;</p>
+<p><strong>2. MULTIPROGRAMMING BATCH SYSTEMS</strong></p>
+<ul class="content">
+<li>In this the operating system picks up and begins to execute one of the jobs from memory.</li>
+<li>Once this job needs an I/O operation operating system switches to another job (CPU and OS always busy).</li>
+<li>Jobs in the memory are always less than the number of jobs on disk(Job Pool).</li>
+<li>If several jobs are ready to run at the same time, then the system chooses which one to run through the process of <strong>CPU Scheduling</strong>.</li>
+<li>In Non-multiprogrammed system, there are moments when CPU sits idle and does not do any work.</li>
+<li>In Multiprogramming system, CPU will never be idle and keeps on processing.</li>
+</ul>
+<p><strong>Time-Sharing Systems</strong> are very similar to Multiprogramming batch systems. In fact time sharing systems are an extension of multiprogramming systems.</p>
+<p>In time sharing systems the prime focus is on minimizing the response time, while in multiprogramming the prime focus is to maximize the CPU usage.</p>
+<p><strong>3. MULTIPROCESSOR SYSTEMS</strong></p>
+<p>A multiprocessor system consists of several processors that share a common physical memory. Multiprocessor system provides higher computing power and speed. In multiprocessor system all processors operate under single operating system. Multiplicity of the processors and how they do act together are transparent to the others.</p>
+<p>Following are some advantages of this type of system.</p>
+<ol class="content">
+<li>Enhanced performance</li>
+<li>Execution of several tasks by different processors concurrently, increases the system's throughput without speeding up the execution of a single task.</li>
+<li>If possible, system divides task into many subtasks and then these subtasks can be executed in parallel in different processors. Thereby speeding up the execution of single tasks.</li>
+</ol>
+<p><strong>4. DESKTOP SYSTEMS</strong></p>
+<p>Earlier, CPUs and PCs lacked the features needed to protect an operating system from user programs. PC operating systems therefore were neither <strong>multiuser</strong> nor <strong>multitasking</strong>. However, the goals of these operating systems have changed with time; instead of maximizing CPU and peripheral utilization, the systems opt for maximizing user convenience and responsiveness. These systems are called <strong>Desktop Systems</strong> and include PCs running <code>Microsoft Windows</code> and the <code>Apple Macintosh</code>. Operating systems for these computers have benefited in several ways from the development of operating systems for <strong>mainframes</strong>.</p>
+<p><strong>Microcomputers</strong> were immediately able to adopt some of the technology developed for larger operating systems. On the other hand, the hardware costs for microcomputers are sufficiently <strong>low</strong> that individuals have sole use of the computer, and CPU utilization is no longer a prime concern. Thus, some of the design decisions made in operating systems for mainframes may not be appropriate for smaller systems.</p>
+<p><strong>5. DISTRIBUTED OPERATING SYSTEMS</strong></p>
+<p>The motivation behind developing distributed operating systems is the availability of powerful and inexpensive microprocessors and advances in communication technology.</p>
+<p>These advancements in technology have made it possible to design and develop distributed systems comprising of many computers that are inter connected by communication networks. The main benefit of distributed systems is its low price/performance ratio.</p>
+<p>Following are some advantages of this type of system.</p>
+<ol class="content">
+<li>As there are multiple systems involved, user at one site can utilize the resources of systems at other sites for resource-intensive tasks.</li>
+<li>Fast processing.</li>
+<li>Less load on the Host Machine.</li>
+</ol>
+<p>The two types of Distributed Operating Systems are: <code>Client-Server Systems</code> and <code>Peer-to-Peer Systems</code>.</p>
+<p><strong>6. CLUSTERED SYSTEMS</strong></p>
+<ul class="content">
+<li>Like parallel systems, clustered systems gather together multiple CPUs to accomplish computational work.</li>
+<li>Clustered systems differ from parallel systems, however, in that they are composed of two or more individual systems coupled together.</li>
+<li>The definition of the term clustered is <strong>not concrete;</strong> the general accepted definition is that clustered computers share storage and are closely linked via LAN networking.</li>
+<li>Clustering is usually performed to provide <strong>high availability</strong>.</li>
+<li>A layer of cluster software runs on the cluster nodes. Each node can monitor one or more of the others. If the monitored machine fails, the monitoring machine can take ownership of its storage, and restart the application(s) that were running on the failed machine. The failed machine can remain down, but the users and clients of the application would only see a brief interruption of service.</li>
+<li><strong>Asymmetric Clustering -</strong> In this, one machine is in hot standby mode while the other is running the applications. The hot standby host (machine) does nothing but monitor the active server. If that server fails, the hot standby host becomes the active server.</li>
+<li><strong>Symmetric Clustering -</strong> In this, two or more hosts are running applications, and they are monitoring each other. This mode is obviously more efficient, as it uses all of the available hardware.</li>
+<li><strong>Parallel Clustering -</strong> Parallel clusters allow multiple hosts to access the same data on the shared storage. Because most operating systems lack support for this simultaneous data access by multiple hosts, parallel clusters are usually accomplished by special versions of software and special releases of applications.</li>
+</ul>
+<p>Clustered technology is rapidly changing. Clustered system use and features should expand greatly as <strong>Storage Area Networks(SANs)</strong>. SANs allow easy attachment of multiple hosts to multiple storage units. Current clusters are usually limited to two or four hosts due to the complexity of connecting the hosts to shared storage.</p>
+<p><strong>7. REAL-TIME OPERATING SYSTEM</strong></p>
+<p>It is defined as an operating system known to give maximum time for each of the critical operations that it performs, like OS calls and interrupt handling.</p>
+<p>The Real-Time Operating system which guarantees the maximum time for critical operations and complete them on time are referred to as <strong>Hard Real-Time Operating Systems.</strong></p>
+<p>While the real-time operating systems that can only guarantee a maximum of the time, i.e. the critical task will get priority over other tasks, but no assurity of completeing it in a defined time. These systems are referred to as <strong>Soft Real-Time Operating Systems</strong>.</p>
+<hr />
+</div>
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ethical Hacking | GEEKOFIA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="scripting.css" />
+    
+</head>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>Basic hacking via cross site scripting (XSS)</strong></p>
+
+<p><strong>What is XSS?</strong><br />Cross Site Scripting also known as XSS , is one of the most common web appliction vulnerability that allows an attacker to run his own client side scripts(especially Javascript) into web pages viewed by other users. In a typical XSS attack, a hacker inject his malicious javascript code in the legitimate website . When a user visit the infected or a specially-crafted link , it will execute the malicious javascript. A successfully exploited XSS vulnerability will allow attackers to do phishing attacks, steal accounts and even worms.</p>
+<p>It will be helpful for understanding XSS , if you have the following prerequisite:</p>
+<p>Strong Knowledge in HTML,javascript(Reference).<br /> Basic Knowledge in HTTP client-Server Architecure(Reference)<br /> [optional]Basic Knowledge about server side programming(php,asp,jsp).</p>
+<p><strong>XSS Attack:</strong><br /><strong>Step 1:</strong> Finding Vulnerable Website<br />Hackers use google dork for finding the vulnerable sites for instance &ldquo;?search=&rdquo; or &ldquo;.php?q=&rdquo; . 1337 target specific sites instead of using google search. If you are going to test your own site, you have to check every page in your site for the vulnerability.</p>
+<p><strong>Step 2:</strong> Testing the Vulnerability:<br />First of all, we have to find a input field so that we can inject our own script, for example: search box, username,password or any other input fields.</p>
+<p>Test 1 :<br />Once we found the input field, let us try to put some string inside the field, for instance let me input &ldquo;BTS&rdquo;. It will display the result .</p>
+<p>Now right click on the page and select view source. search for the string &ldquo;BTS&rdquo; which we entered in the input field. Note the location where the input is placed.</p>
+<p>Test 2:<br />Now we are going to check whether the server sanitize our input or not. In order to do this , let us input the &lt;script&gt; tag inside the input field.</p>
+<p>View the source of the page . Find the location where input displayed place in previous test.</p>
+<p>Thank god, our code is not being sanitized by the server and the code is just same as what we entered in the field. If the server sanitize our input, the code may look like this &amp;lt;script&amp;gt;. This indicates that the website vulnerable to XSS attack and we can execute our own scripts .</p>
+<p><strong>Step 3:</strong> Exploiting the vulnerability<br />Now we know the site is somewhat vulnerable to XSS attack. But let us make sure whether the site is completely vulnerable to this attack by injecting a full javascript code. For instance, let us input &lt;script&gt;alert(&lsquo;BTS&rsquo;)&lt;/script&gt; .</p>
+<p>Now it will display pop-up box with &lsquo;BTS&rsquo; string. Finally, we successfully exploit the XSS . By extending the code with malicious script, a hacker can do steal cookies or deface the site and more.</p>
+<p>Types of XSS Based on persisting capability:</p>
+<p><br />Based one Persistence capability, we can categorize the XSS attack into two types namely Persistent and Non-Persistent.</p>
+<p><strong>Persistent XSS:</strong></p>
+<p>The Persistent or Stored XSS attack occurs when the malicious code submitted by attacker is saved by the server in the database, and then permanently it will be run in the normal page.</p>
+<p>For Example: <br />Many websites host a support forum where registered users can ask their doubts by posting message , which are stored in the database. Let us imagine , An attacker post a message containing malicious javascript code instead. If the server fail to sanitize the input provided, it results in execution of injected script. The code will be executed whenever a user try to read the post. If suppose the injected code is cookie stealing code, then it will steal cookie of users who read the post. Using the cookie, attacker can take control of your account.</p>
+<p><strong>Non-Persistent XSS:</strong></p>
+<p>Non-Persistent XSS, also referred as Reflected XSS , is the most common type of XSS found now a days. In this type of attack, the injected code will be send to the server via HTTPrequest. The server embedd the input with the html file and return the file(HTTPResponse) to browser. When the browser executes the HTML file, it also execute the embedded script. This kind of XSS vulnerability frequently occur in search fields.</p>
+<p>Example:<br />Let us consider a project hosting website. To find our favorite project, we will just input the related-word in the search box . When searching is finished, it will display a message like this &ldquo;search results for yourword &rdquo; . If the server fail to sanitize the input properly, it will results in execution of injected script.</p>
+<p>In case of reflected XSS attacks, attacker will send the specially-crafted link to victims and trick them into click the link. When user click the link, the browser will send the injected code to server, the server reflects the attack back to the users&rsquo; browser. The browser then executes the code .</p>
+</div>
+</div>
+</body>
+</html>
+
+
+
+

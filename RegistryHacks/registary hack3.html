@@ -1,0 +1,84 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-family: 'Slabo 27px', serif;
+
+
+
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>Add Your Name in Desktop Context Menu in Windows</strong></p>
+<p><strong>1.</strong> Type <strong>regedit</strong> in RUN or Start Menu search box and press Enter. It'll open Registry Editor.</p>
+<p><strong>2.</strong> Now go to:</p>
+<blockquote>
+<p><strong>HKEY_CLASSES_ROOT\DesktopBackground\Shell</strong></p>
+</blockquote>
+<p><strong>3.</strong> Now we'll need to create a new key under "<strong>Shell</strong>" key. Right-click on "Shell" key and select "<strong>New -&gt; Key</strong>". Give the new key any desired name e.g. "<strong>Name</strong>" (without quotes).</p>
+<p><strong>4.</strong> Now in right-side pane, change value of "<strong>Default</strong>" to your desired name which you want to show in Desktop context menu. We have chosen <strong>~:: VISHAL ::~</strong> in our example.</p>
+<p><strong>5.</strong> Now right-click on the new key which we created in step 3, e.g. <strong>Name</strong> and select "<strong>New -&gt; Key</strong>". Give the new key name of <strong>command</strong>.</p>
+<p><strong>6.</strong> In right-side pane, change value of "<strong>Default</strong>" to <strong>explorer.exe</strong> if you want to open Explorer by clicking on it. We have chosen <strong>Control userpasswords</strong> to open <strong>User Accounts</strong> applet in our example.</p>
+<p><strong>7. To set an icon</strong> for the shortcut, select the key created in Step 3 and in right-side pane, create a new String value "<strong>Icon</strong>". Set its value to your desired icon. We have set it to <strong>imageres.dll,206</strong> in our example.</p>
+<p><strong>To set its position</strong> in the context menu, create a new String value "Position" and set its value to:</p>
+<blockquote>
+<p><strong>Top</strong> (To show it at top)<br /> <strong> Bottom</strong> (To show it at bottom)</p>
+</blockquote>
+<p>We have set it at top.</p>
+<p><strong>8.</strong> That's it. Now you can have your name with an icon in Desktop context menu.</p>
+<p><strong>PS.</strong> If you want a ready-made registry script to do the task automatically, then copy paste following code in Notepad and save the file with name <strong>"AskVG.REG"</strong> (including quotes).</p>
+<blockquote>
+<p>Windows Registry Editor Version 5.00</p>
+<p>[HKEY_CLASSES_ROOT\DesktopBackground\Shell\name]<br /> @="<strong>~:: VISHAL ::~</strong>"<br /> "Icon"="<strong>imageres.dll,206</strong>"<br /> "Position"="Top"</p>
+<p>[HKEY_CLASSES_ROOT\DesktopBackground\Shell\name\command]<br /> @="<strong>Control userpasswords</strong>"</p>
+</blockquote>
+<p>Run the file and it'll add the program shortcut in Desktop context menu.</p>
+</div>
+</div>
+</body>
+</html>

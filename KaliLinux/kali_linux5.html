@@ -1,0 +1,104 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-family: 'Slabo 27px', serif;
+
+
+
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>Create an Evil Twin Wireless Access Point</strong></p>
+<p><strong>What's an Evil Twin AP?</strong></p>
+<p>The evil twin AP is an access point that looks and acts just like a legitimate AP and entices the end-user to connect to our access point. Our aircrack-ng suite has a tool, airbase-ng, that can be used to convert our wireless adapter into an access point. This is a powerful client-side hack that will enable us to see all of the traffic from the client and conduct a man-in-the middle attack.</p>
+<p>In this scenario, we are a private investigator. We've been asked by a client to investigate the possibility that their neighbor is downloading and selling child pornography. They've asked us to investigate and determine whether he actually is, and if so, to collect evidence.</p>
+<p><strong>Step 1</strong> Start Airmon-Ng</p>
+<p>First , we need to check whether our wireless card is operational.</p>
+<p>bt &gt; iwconfig</p>
+<p>As we can see, our wireless card is operational and has been assigned wlan0. Our next step is to put our wireless card into monitor or promiscuous mode. We can do this simply by:</p>
+<p>bt &gt;airmon-ng start wlan0</p>
+<p>Airmon-ng has put our wireless into monitor mode and renamed it to mon0. Now our wireless card is capable of seeing all the wireless traffic.</p>
+<p><strong>Step 2</strong> Start Airdump-Ng</p>
+<p>Our next step is to begin capturing traffic on our wireless card. We do this by typing:</p>
+<p>bt &gt; airodump-ng mon0</p>
+<p>We can see all the wireless access points in our range along with all their vital statistics. The neighbor that we suspect of downloading and selling child porn is on an AP with the SSID "Elroy."</p>
+<p>If we do everything right, we can clone his AP and get him to connect to our evil twin. When he does that, we'll be able to see all of his traffic, as well as potentially inserting our own packets/messages/code into his computer.<br />Step 3Wait for the Suspect to Connect</p>
+<p>Now we just wait for the suspect to connect to his wireless access point. When he does, it will appear in the lower part of the airodump-ng screen.</p>
+<p><strong>Step 4</strong> Create a New AP with Same SSID &amp; MAC Address</p>
+<p>Once he has connected to his AP, we can use airbase-ng to create a fake, or evil twin, of his AP. We can do this by opening a new terminal and typing:</p>
+<p>bt &gt; airbase-ng -a 00:09:5B:6F:64:1E --essid "Elroy" -c 11 mon0</p>
+<p>Where 00:09:5B:6F:64:1E is the BSSID, Elroy is the SSID, and -c 11 is the channel of the suspect's AP.</p>
+<p><strong>Step 5</strong> Deauthentication or Bumping Him Off</p>
+<p>Our next step is to bump the "neighbor" off his access point. The 802.11 standard has a special frame called deauthentication that, as you might expect, deauthenticates everyone on the access point. When his computer tries to re-authenticate, he will automatically reconnect to the strongest AP with the ESSID of "Elroy."</p>
+<p>We can do this by using aireplay-ng with the deauth packet:</p>
+<p>bt &gt; aireplay-ng --deauth 0 -a 00:09:5B:6F:1E</p>
+<p>Note that we once again used his BSSID in the aireplay-ng command. If our signal is stronger than his own AP, he will automatically reconnect to our evil twin!</p>
+<p><strong>Step 6</strong> Turn Up the Power!</p>
+<p>The crucial link in the evil twin hack is to make certain that our fake AP is closer or stronger than the original or authentic AP. This could be a critical weakness when physical access is unavailable. In airports and other public places, this is no problem, but in our scenario here, we don't have physical access and it's very likely that his AP is closer and stronger than ours. Don't let this deter us!</p>
+<p>First, we can turn up the power on our access point in attempt to be stronger than his. Even next door, this may work as most access points automatically down-regulate their power to the minimum necessary to maintain a connection to its clients. We can boost our AP to maximum power by typing;</p>
+<p>iwconfig wlan0 txpower 27</p>
+<p>This command will boost our power output to the maximum legally allowable in the United States, 27 dBm or 500 milliwatts.</p>
+<p>In some cases, even boosting power to 500 mWs may prove to be inadequate. If we try to turn up the power to the maximum on our Alfa wireless cards&mdash;1,000 mWs or 30 dBm&mdash;we get the error message below (some of the newer cards can actually transmit at 2,000 mWs or four times what is legally allowable in the U.S.).</p>
+<p>iwconfig wlan0 txpower 30</p>
+<p>Note: This next step is illegal in the U.S., so be careful using it unless you have specific permission or are a member of law enforcement.</p>
+<p>Every nation has its own set of Wi-Fi regulations. Some allow more power and more channels than the U.S. For instance, Bolivia allows the use of channel 12 and a full 1,000 mWs of power. We can get our Alfa card to use Bolivian regulations by simply typing:</p>
+<p>iw reg set BO</p>
+<p>Now that we are in Bolivian regulatory domain, we can boost our power to its maximum by typing:</p>
+<p>iwconfig wlan0 txpower 30</p>
+<p>Check output power by typing:</p>
+<p>iwconfig</p>
+<p>And we can now see at the end of the second line that our power is now up to 30 dBm or 1000 milliwatts, enough to overwhelm all the other local access points even from several houses away!</p>
+</div>
+</div>
+</body>
+</html>
+
+
+
+

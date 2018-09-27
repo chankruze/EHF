@@ -1,0 +1,93 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-family: 'Slabo 27px', serif;
+
+
+
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>How To Change MAC Address On Kali Linux</strong></p>
+<p>Changing MAC address or we also can call it MAC address spoofing will be useful in some cases, but we will talk about it later in conclusion at the end of this article.</p>
+<p><strong>Requirement:</strong></p>
+<p>1. Linux terminal</p>
+<p><strong>Step by step How to Change MAC Address on Kali Linux:</strong></p>
+<p>1. Open your terminal, and type</p>
+<p>ifconfig | grep HWaddr</p>
+<p>How To Change MAC Address On Kali Linux</p>
+<p>you will see your original MAC address, mine was 08:00:27:b2:4d:4b</p>
+<p>2. To temporary change our MAC address, we need to turn off the network interface first by running this command</p>
+<p>ifconfig eth0 down</p>
+<p>3. After that we can configure the new MAC address</p>
+<p>ifconfig eth0 hw ether 00:00:00:00:00:02</p>
+<p>you can change the MAC address using this hexadecimal format XX:XX:XX:XX:XX:XX</p>
+<p>4. Now we can turn on the network interface again.</p>
+<p>ifconfig eth0 up</p>
+<p>5. And the last we can check again our MAC whether it's change or not.</p>
+<p>How To Change MAC Address On Kali Linux</p>
+<p>if we follow until this step, MAC address will back to default after we restart our machine. Go to next page to view how to change MAC address permanently.</p>
+<p>6. Kali Linux was built based on Debian. In Debian all the network interface was located on /etc/network/interfaces.</p>
+<p>7. We will configure the /etc/network/interfaces. In this tutorial I will use pico text editor, but you can choose any of your favourite text editor.</p>
+<p>pico /etc/network/interfaces</p>
+<p>8. Now we will add one line of script to change our MAC address permanently</p>
+<p>pre-up ifconfig eth0 hw ether 00:00:00:00:00:02</p>
+<p>This script will be called on system startup.</p>
+<p>How to change MAC address on kali linux</p>
+<p>9. If we want to restore the default MAC address, just add the # sign in front of script in step 8.</p>
+<p>#pre-up ifconfig eth0 hw ether 00:00:00:00:00:02</p>
+<p><strong>Conclusion:</strong></p>
+<p>1. Changing MAC address usually needed for privacy and prevent tracking in the local network about our hardware information(e.g: in public wi-fi network).</p>
+<p>2. Some network administrator they make blocking rule in proxy or router by adding the MAC address. To ensure interoperability and preventing being blocked by the proxy or router blacklist rule, we can change our MAC address.</p>
+</div>
+</div>
+</body>
+</html>
+
+

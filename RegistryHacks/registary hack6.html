@@ -1,0 +1,72 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-family: 'Slabo 27px', serif;
+
+
+
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+<p><strong>How To Create A Hidden User Account</strong></p>
+
+<p>Step 1: Open Registry Editor</p>
+<p>Goto start&gt;run and type "regedit" (without quotation marks)</p>
+<p>Step 2: Goto this key</p>
+<p>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion\Winlogon\SpecialAccounts\UserList</p>
+<p>*NOTE*- you may have to create some keys after winlogon, just name them as you see them above</p>
+<p>Step 3: Right click and make a new DWORD value</p>
+<p>Create a new DWORD value and call it the name of the account that you would like to hide</p>
+<p>Step 4: DWORD Value</p>
+<p>To hide the account set the value to 0, to show it set it to 1</p>
+<p>After a system reboot the changes should take effect and the account should be hidden!</p>
+</div>
+</div>
+</body>
+</html>

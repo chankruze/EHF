@@ -1,0 +1,104 @@
+<html>
+<style>
+
+body{ margin:0; padding:0; 
+
+font-family: 'Open Sans', sans-serif;
+font-family: 'Slabo 27px', serif;
+}
+
+.wrapper {
+    background: #141518;
+    color: #f2f2f2;
+	padding:20px;
+}
+
+
+.para {
+    background: #34373c none repeat scroll 0 0;
+    border-radius: 10px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.para h2 {
+    font-size: 30px;
+}
+.para  p {
+    font-size: 16px;
+	line-height:24px;
+}
+
+
+.ul-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*.wrapper p{ margin:0;}
+*/
+
+</style>
+
+<body>
+<div class="wrapper">
+<div class="para">
+
+<div class="posttitle">
+<p><strong>How to Remove Your Windows Disk Encryption Key From Microsoft&rsquo;s&nbsp;Servers</strong></p>
+</div>
+<div class="entry">
+<p>Windows enables&nbsp;device encryption&nbsp;on many Windows 10 and 8.1 PCs out-of-the-box.&nbsp;It also&nbsp;uploads your recovery key to Microsoft&rsquo;s servers, allowing you&nbsp;to regain access to you&nbsp;encrypted drives even if you&nbsp;forget their passwords.</p>
+<p>If you&rsquo;re not comfortable with this, though, it&rsquo;s possible to delete the recovery&nbsp;key from Microsoft&rsquo;s servers or even create a new key. This process even works on Home&nbsp;editions&nbsp;of Windows, even though they don&rsquo;t have access to the full BitLocker encryption provided by the Professional&nbsp;versions.</p>
+<p><strong>You Probably Shouldn&rsquo;t Do This</strong></p>
+<div class="relatedside">Realistically, you probably shouldn&rsquo;t do this. It&rsquo;s unusual that Microsoft is silently uploading recovery keys to its own servers, but it isn&rsquo;t actually worse than the previous status quo.</div>
+<div class="relatedside">&nbsp;</div>
+<div class="relatedside">Previous versions of Windows &mdash; and the many current Windows PCs that still don&rsquo;t ship with device encryption enabled &mdash; are&nbsp;just unencrypted. That means anyone could access their files if they can get their hands on the computer. Enabling&nbsp;encryption and giving Microsoft&nbsp;a recovery key is a big help against laptop thieves and other people who might want to snoop on your files.</div>
+<p>The recovery key allows you to regain access to your computer&rsquo;s files even if you forget your password, or upgrade the hardware on your system (which can sometimes lock you out of the encrypted drive). You just log into&nbsp;your Microsoft account online, find the recovery key, and type it into your&nbsp;computer to access the locked hard drive. This is a huge boon for home users who wouldn&rsquo;t necessarily back up their recovery keys in a safe place, and might forget their passwords. Home users wouldn&rsquo;t be happy if they lost all the files on their computers over something so silly.</p>
+<p>Of course, the other side of the coin here&nbsp;is that Microsoft could be forced to give your recovery key to the government. Or, alternately, that someone could&nbsp;gain physical access to your computer and somehow get into your Microsoft account to access the recovery key and bypass the encryption.</p>
+<p>The tips below will take that recovery key away from Microsoft. But if you do this, <em>you&nbsp;have to keep a copy of it yourself and store it somewhere safe</em>. If you lose it, and you forget your password or update your hardware without disabling encryption first, you&rsquo;ll be locked out of your computer for good.</p>
+<p><strong>Delete the Recovery Key From Microsoft&rsquo;s Servers</strong></p>
+<p>To check if Microsoft is storing a recovery key for one or more of your PCs, open&nbsp;the&nbsp;https://onedrive.live.com/recoverykey&nbsp;page in your web browser. Sign in with the same Microsoft account you first signed in with on that Windows PC.</p>
+<p>If you don&rsquo;t have any keys stored on Microsoft&rsquo;s&nbsp;servers, you&rsquo;ll see a &ldquo;You don&rsquo;t have any BitLocker recovery keys in your Microsoft account&rdquo; message.</p>
+<p>If you do have recovery keys stored on Microsoft&rsquo;s servers, you&rsquo;ll see one or more recovery keys here. Click the name of your computer and then click the &ldquo;Delete&rdquo; link that appears to delete your recovery key from Microsoft&rsquo;s servers.</p>
+<p><strong>Warning</strong>: Write down this recovery key or print it out and keep it somewhere safe before deleting it! You&rsquo;ll need the recovery key in&nbsp;case you ever need to regain access to your encrypted files.</p>
+<p><strong>Generate a New Recovery Key</strong></p>
+<p>Microsoft promises they&rsquo;ll quickly&nbsp;delete any recovery keys you remove from their servers. However, if you&rsquo;re a bit paranoid, this probably won&rsquo;t be good enough for you. You can instead have&nbsp;Windows generate a new recovery key that will never be uploaded to Microsoft&rsquo;s servers.</p>
+<p>This doesn&rsquo;t require re-encrypting your entire drive. Basically, BitLocker&nbsp;encryption uses two keys. The first&nbsp;key is stored only on your computer and is used for encrypting and decrypting your files. The second&nbsp;key is used to decrypt the key stored on your computer. This process just changes the second key, which is the only one that ever leaves your computer anyway.</p>
+<p>To do this, right-click the Start button and select &ldquo;Command Prompt (Admin)&rdquo; to open a Command Prompt window as administrator.</p>
+<p>Type the following command and press Enter to temporarily &ldquo;suspend&rdquo; BitLocker protection:</p>
+<blockquote>
+<pre>manage-bde -protectors -disable %systemdrive%</pre>
+</blockquote>
+<p>Run the following command to delete the current recovery key:</p>
+<blockquote>
+<pre>manage-bde -protectors -delete %systemdrive% -type RecoveryPassword</pre>
+</blockquote>
+<p>Then run&nbsp;this command to generate a new recovery key:</p>
+<blockquote>
+<pre>manage-bde -protectors -add %systemdrive% -RecoveryPassword</pre>
+</blockquote>
+<p><strong>Important</strong>: Write down or print out the recovery key displayed after you run this command and keep it in a safe place! This is your new recovery key, and you&rsquo;re responsible for safeguarding it.</p>
+<p>Lastly, re-enable the BitLocker protection:</p>
+<blockquote>
+<pre>manage-bde -protectors -enable %systemdrive%</pre>
+</blockquote>
+<p>You&rsquo;ll see a message saying no drives in the computer support device encryption.&nbsp;However, they are encrypted. If you want to undo all your changes, you&rsquo;ll need to disable encryption in a command prompt window.</p>
+<p><strong>Or Just Use BitLocker Instead</strong></p>
+<p>If you have the Professional edition&nbsp;of Windows &mdash; or if you&rsquo;re willing to pay&nbsp;another $99 to upgrade to the Professional edition&nbsp;of Windows &mdash; you can skip all this and just set up normal BitLocker encryption.</p>
+<p>When you set up BitLocker, you&rsquo;ll be asked how you want to back up your recovery key. Just don&rsquo;t select the &ldquo;Save to your Microsoft account&rdquo; option and you&rsquo;ll be fine. Be sure to write down the recovery key or print it out and keep it somewhere safe!</p>
+<p>This is also the only official way to encrypt your Windows system drive if your computer didn&rsquo;t ship with device encryption enabled. You can&rsquo;t just enable device encryption later &mdash; on Home Windows PCs without device encryption, you need to pay for Windows Professional so you can use BitLocker.</p>
+<p>You could try using TrueCrypt or a similar open-source tool, but a cloud of uncertainty still hangs over those.</p>
+<hr />
+<p>Again, most Windows users won&rsquo;t want to do this. With device encryption, Microsoft moved from all Windows PCs being unencrypted by default to many Windows PCs being encrypted by default.</p>
+<p>Even though Microsoft has the recovery key, that&rsquo;s a big win for data security and a big improvement. But, if you want to go farther, the tricks above will let you take control over your recovery key without paying for a Professional edition of Windows.</p>
+</div>
+</div>
+</div>
+</body>
+</html>
